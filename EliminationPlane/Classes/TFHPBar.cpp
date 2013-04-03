@@ -52,7 +52,7 @@ bool TFHPBar::init(CCDictionary* pObjectDict)
     
     CCString* barFileName = getBarFileNameFromDict();
     
-    setBar(dynamic_cast<TFScale9SpriteObject*>(TFObject::createObjectByClassName("TFScale9SpriteObject")));
+    setBar(dynamic_cast<TFScale9SpriteObject*>(OBJECT_FACTORY->createInstance("TFScale9SpriteObject")));
     if (!getBar() || !m_pBar->init(barFileName->getCString()))
     {
         return false;

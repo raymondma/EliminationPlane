@@ -8,20 +8,10 @@
 
 #include "TFGameObjectManager.h"
 
-TFGameObjectManager* TFGameObjectManager::spInstance_ = NULL;
+IMPLEMENT_SINGLETON(TFGameObjectManager);
 
 
 
-
-TFGameObjectManager* TFGameObjectManager::getInstance()
-{
-    if (!spInstance_)
-    {
-        spInstance_ = new TFGameObjectManager;
-    }
-    
-    return spInstance_;
-}
 
 
 TFGameObjectManager::TFGameObjectManager() :
@@ -34,7 +24,6 @@ pGameObjects_(NULL)
 
 TFGameObjectManager::~TFGameObjectManager()
 {
-    spInstance_ = NULL;
     clearAll();
 }
 

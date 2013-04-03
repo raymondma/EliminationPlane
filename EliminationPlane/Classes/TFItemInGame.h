@@ -15,6 +15,7 @@ class TFItemInGame : public TFSpriteObject
 {
     friend class TFObject;
 public:
+    FACTORY_CREATE_FUNC(TFItemInGame);
     virtual ~TFItemInGame();
     
     virtual bool init(CCDictionary* pObjectDict);

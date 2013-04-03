@@ -13,6 +13,9 @@
 #include "TFGameObjectManager.h"
 #include "TFBattleFieldLayer.h"
 #include "TFTexturesCache.h"
+#include "TFObjectFactory.h"
+
+#include "TFRole.h"
 
 #include <time.h>
 
@@ -46,6 +49,12 @@ bool AppDelegate::applicationDidFinishLaunching()
     this->setupMultipleResolutionSupport();
     
     // create a scene. it's an autorelease object
+    if (!OBJECT_FACTORY->Initialize())
+    {
+        __CCLOGWITHFUNCTION("TFObjectFactory initialize failed");
+        return false;
+    }
+
     if (!GAME_OJBECT_MANAGER->init())
     {
         return false;

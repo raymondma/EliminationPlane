@@ -14,6 +14,7 @@
 
 #include <string>
 
+#include "TFObjectFactory.h"
 #include "TFStateBase.h"
 #include "TFCollisionProtocol.h"
 
@@ -31,7 +32,6 @@ class TFObject : public CCNode, public TFStateBase, public TFCollisionProtocol
 public:
     // Param: name      the name in GameObject.plist
     static TFObject* createObject(const string& name);
-    static TFObject* createObjectByClassName(const string& className);
 
 	virtual ~TFObject();
 	

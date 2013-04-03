@@ -15,6 +15,7 @@ class TFScale9SpriteObject : public TFVisibleObject
 {
     friend class TFObject;
 public:
+    FACTORY_CREATE_FUNC(TFScale9SpriteObject);
 	virtual ~TFScale9SpriteObject();
 	
 	virtual bool init(CCDictionary* pObjectDict);

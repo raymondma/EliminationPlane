@@ -12,23 +12,24 @@
 
 template<class T> class TFSingleton
 {
-protected:
-	static T* m_pObj;
-	TFSingleton(){}
-
 public:
-	virtual ~TFSingleton(){}
-	static T* GetObj()
+	virtual ~TFSingleton(){spInstance_=NULL;}
+	static T* getInstance()
 	{
-		if (m_pObj==NULL)
+		if (spInstance_==NULL)
 		{
-			m_pObj = new T;
+			spInstance_ = new T;
 		}
-		return m_pObj;
+		return spInstance_;
 	}
+    
+protected:
+	TFSingleton(){}
+    
+private:
+    static T* spInstance_;
 };
 
-//#define DECLARE_SINGLETON(__c)	static __c* m_pObj;
-//#define IMPLEMENT_SINGLETON(__c) __c* __c::m_pObj = NULL;
+#define IMPLEMENT_SINGLETON(__c) template<> __c* TFSingleton<__c>::spInstance_ = NULL;
 
 #endif

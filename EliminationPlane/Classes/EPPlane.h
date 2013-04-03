@@ -10,11 +10,14 @@
 #define __EliminationPlane__EPPlane__
 
 #include "TFRole.h"
+#include "TFObjectFactory.h"
 
 class EPPlane : public TFRole
 {
     friend class TFObject;
 public:
+    FACTORY_CREATE_FUNC(EPPlane);
+    
     virtual ~EPPlane();
     
     virtual void update(float dt);

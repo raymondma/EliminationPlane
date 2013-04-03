@@ -10,18 +10,9 @@
 #include "TFCollisionProtocol.h"
 
 
-TFCollisionMgr* TFCollisionMgr::m_pObj = NULL;
+IMPLEMENT_SINGLETON(TFCollisionMgr);
 
 
-
-TFCollisionMgr* TFCollisionMgr::getObj()
-{
-    if (NULL == m_pObj)
-    {
-        m_pObj = new TFCollisionMgr;
-    }
-    return m_pObj;
-}
 
 
 
@@ -35,7 +26,6 @@ TFCollisionMgr::TFCollisionMgr()
 TFCollisionMgr::~TFCollisionMgr()
 {
     clearAll();
-    m_pObj = NULL;
 }
 
 

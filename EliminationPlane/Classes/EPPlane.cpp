@@ -8,3 +8,35 @@
 
 #include "EPPlane.h"
 
+EPPlane::EPPlane()
+{
+    
+}
+
+
+
+EPPlane::~EPPlane()
+{
+    
+}
+
+
+
+void EPPlane::update(float dt)
+{
+    
+}
+
+
+
+void EPPlane::clearAll()
+{
+    
+}
+
+
+
+void EPPlane::triggerSkill()
+{
+    
+}

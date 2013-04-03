@@ -21,6 +21,8 @@ class TFRole : public TFSpriteObject
     friend class TFObject;
     CC_SYNTHESIZE_RETAIN(TFGun*, m_pGun, Gun);
 public:
+    FACTORY_CREATE_FUNC(TFRole);
+    
 	virtual ~TFRole();
 
     virtual bool init(CCDictionary* pObjectDict);

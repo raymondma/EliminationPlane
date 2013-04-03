@@ -18,6 +18,8 @@ class TFMonster : public TFRole
     friend class TFObject;
     CC_SYNTHESIZE_RETAIN(TFHPBar*, m_pHPBar, HPBar);
 public:
+    FACTORY_CREATE_FUNC(TFMonster);
+    
     virtual ~TFMonster();
     virtual bool init(CCDictionary* pObjectDict);
     

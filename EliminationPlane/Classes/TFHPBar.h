@@ -18,6 +18,7 @@ class TFHPBar : public TFSpriteObject
     friend class TFObject;
     CC_SYNTHESIZE_RETAIN(TFScale9SpriteObject*, m_pBar, Bar);
 public:
+    FACTORY_CREATE_FUNC(TFHPBar);
     virtual ~TFHPBar();
 
     virtual void setPercentage(float percentage);

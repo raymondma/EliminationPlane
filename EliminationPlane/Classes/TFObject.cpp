@@ -8,12 +8,7 @@
 
 #include "TFObject.h"
 #include "TFGameObjectManager.h"
-#include "TFRole.h"
-#include "TFBulletBase.h"
-#include "TFMonster.h"
-#include "TFItemInGame.h"
-#include "TFHPBar.h"
-#include "TFGun.h"
+
 
 
 DEFINE_DICTFUNC_STR(TFObject, CateName);
@@ -35,7 +30,7 @@ TFObject* TFObject::createObject(const string& name)
         return NULL;
     }
 
-    pObject = createObjectByClassName(strCateName->getCString());
+    pObject = OBJECT_FACTORY->createInstance(strCateName->getCString());
     
     if (pObject)
     {
@@ -43,57 +38,6 @@ TFObject* TFObject::createObject(const string& name)
     }
     return pObject;
 }
-
-
-
-TFObject* TFObject::createObjectByClassName(const string& className)
-{
-    TFObject* pObject = NULL;
-    
-    if (className.compare("TFRole") == 0)
-    {
-        pObject = new TFRole;
-    }
-    else if (className.compare("TFBulletBase") == 0)
-    {
-        pObject = new TFBulletBase;
-    }
-    else if (className.compare("TFMonster") == 0)
-    {
-        pObject = new TFMonster;
-    }
-    else if (className.compare("TFItemInGame") == 0)
-    {
-        pObject = new TFItemInGame;
-    }
-    else if (className.compare("TFHPBar") == 0)
-    {
-        pObject = new TFHPBar;
-    }
-    else if (className.compare("TFGun") == 0)
-    {
-        pObject = new TFGun;
-    }
-    else if (className.compare("TFScale9SpriteObject") == 0)
-    {
-        pObject = new TFScale9SpriteObject;
-    }
-
-#ifdef DEBUG
-    else
-    {
-        __CCLOGWITHFUNCTION("create role object failed: %s", className.c_str());
-        return NULL;
-    }
-#endif
-
-    if (pObject)
-    {
-        pObject->autorelease();
-    }
-    return pObject;
-}
-
 
 
 

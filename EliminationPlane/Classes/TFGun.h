@@ -28,6 +28,7 @@ class TFGun : public TFObject, public TFBatchNodeObject
 {
     friend class TFObject;
 public:
+    FACTORY_CREATE_FUNC(TFGun);
     virtual ~TFGun();
     virtual bool init(CCDictionary* pObjectDict);
     

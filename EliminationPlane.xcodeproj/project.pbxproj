@@ -244,6 +244,7 @@
 		54D5A83B17083FD200485E62 /* yahei.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 54D5A83717083FD200485E62 /* yahei.fnt */; };
 		54D5A83C17083FD200485E62 /* yahei.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D5A83817083FD200485E62 /* yahei.png */; };
 		54D5A83E1708435E00485E62 /* GameObject.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54D5A83D1708435E00485E62 /* GameObject.plist */; };
+		71B83299170BE8D30035BA58 /* TFObjectFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71B83297170BE8D30035BA58 /* TFObjectFactory.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -745,6 +746,8 @@
 		54D5A83717083FD200485E62 /* yahei.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = yahei.fnt; path = Resources/yahei.fnt; sourceTree = "<group>"; };
 		54D5A83817083FD200485E62 /* yahei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yahei.png; path = Resources/yahei.png; sourceTree = "<group>"; };
 		54D5A83D1708435E00485E62 /* GameObject.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = GameObject.plist; path = Resources/GameObject.plist; sourceTree = "<group>"; };
+		71B83297170BE8D30035BA58 /* TFObjectFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFObjectFactory.cpp; path = Classes/TFObjectFactory.cpp; sourceTree = "<group>"; };
+		71B83298170BE8D30035BA58 /* TFObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFObjectFactory.h; path = Classes/TFObjectFactory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1736,6 +1739,8 @@
 				54D5A5581708372C00485E62 /* TFGameObjectManager.h */,
 				54D5A5591708372C00485E62 /* TFTexturesCache.cpp */,
 				54D5A55A1708372C00485E62 /* TFTexturesCache.h */,
+				71B83297170BE8D30035BA58 /* TFObjectFactory.cpp */,
+				71B83298170BE8D30035BA58 /* TFObjectFactory.h */,
 			);
 			name = DAC;
 			sourceTree = "<group>";
@@ -2039,6 +2044,7 @@
 				54D5A57C17083ADF00485E62 /* TFItemInGame.cpp in Sources */,
 				54D5A57F17083B8100485E62 /* TFItemInGameMgr.cpp in Sources */,
 				542A330A17092AB500534A51 /* EPPlane.cpp in Sources */,
+				71B83299170BE8D30035BA58 /* TFObjectFactory.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

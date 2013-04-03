@@ -10,6 +10,7 @@
 #define __TheForce__TFCollisionMgr__
 
 #include "cocos2d.h"
+#include "TFSingleton.h"
 
 #include <map>
 #include <set>
@@ -20,10 +21,10 @@ using namespace std;
 
 class TFCollisionProtocol;
 
-class TFCollisionMgr
+class TFCollisionMgr : public TFSingleton<TFCollisionMgr>
 {
 public:
-    static TFCollisionMgr* getObj();
+    TFCollisionMgr();
     virtual ~TFCollisionMgr();
 
     virtual bool registerCollisionObj(TFCollisionProtocol* pRB, int group);
@@ -41,7 +42,7 @@ protected:
     typedef map<int, LRB>::iterator MILRB_IT;
     typedef map<int, LRB>::const_iterator MILRB_CIT;
 
-    TFCollisionMgr();
+   
     
     MILRB m_ToBeAdded;
     MILRB m_ToBeDeleted;
@@ -51,9 +52,8 @@ protected:
     virtual void updateToBeDeleted();
     
 private:
-    static TFCollisionMgr* m_pObj;
 };
 
-#define COLLISION_MANAGER (TFCollisionMgr::getObj())
+#define COLLISION_MANAGER (TFCollisionMgr::getInstance())
 
 #endif /* defined(__TheForce__TFCollisionMgr__) */

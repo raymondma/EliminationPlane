@@ -10,28 +10,28 @@
 #define __TheForce__TFGameObjectManager__
 
 #include "cocos2d.h"
+#include "TFSingleton.h"
 
 #include <string>
 
 using namespace std;
 USING_NS_CC;
 
-class TFGameObjectManager
+class TFGameObjectManager : public TFSingleton<TFGameObjectManager>
 {
     CC_SYNTHESIZE_RETAIN(CCDictionary*, pGameObjects_, GameObjects);
 public:
-    ~TFGameObjectManager();
-    static TFGameObjectManager* getInstance();
-    
+    TFGameObjectManager();
+    virtual ~TFGameObjectManager();
+   
     bool init();
     void clearAll();
     
     CCDictionary* getObjectByName(const string& name);
 
 protected:
-    TFGameObjectManager();
 private:
-    static TFGameObjectManager* spInstance_;
+
 };
 
 #define GAME_OJBECT_MANAGER (TFGameObjectManager::getInstance())

@@ -6,5 +6,3 @@
 //
 //
 #include "TFSingleton.h"
-
-//template<class T> T* TFSingleton<T>::m_pObj = NULL;

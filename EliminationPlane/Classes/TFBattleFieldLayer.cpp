@@ -13,7 +13,7 @@
 #include "TFBattleFieldDataMgr.h"
 #include "TFCollisionMgr.h"
 #include "TFItemInGameMgr.h"
-
+#include "EPPlane.h"
 
 TFBattleFieldLayer* TFBattleFieldLayer::spInstance_ = NULL;
 
@@ -110,6 +110,8 @@ bool TFBattleFieldLayer::init()
 //    {
 //        return false;
 //    }
+    
+//    EPPlane* player = dynamic_cast<EPPlane*>(TFObject::createObject("Plane0"));
 
 	
     // TODO: get the param values from configuration file.

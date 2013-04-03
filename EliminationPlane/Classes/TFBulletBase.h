@@ -24,6 +24,7 @@ class TFBulletBase : public TFSpriteObject
 {
     friend class TFObject;
 public:
+    FACTORY_CREATE_FUNC(TFBulletBase);
     virtual ~TFBulletBase();
     
     virtual bool init(CCDictionary* pObjectDict);
