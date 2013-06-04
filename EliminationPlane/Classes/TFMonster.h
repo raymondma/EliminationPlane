@@ -9,13 +9,15 @@
 #ifndef __TheForce__TFMonster__
 #define __TheForce__TFMonster__
 
-#include "TFRole.h"
+#include "CRole.h"
 #include "TFCollisionProtocol.h"
 #include "TFHPBar.h"
 
-class TFMonster : public TFRole
+class TFPath;
+
+class TFMonster : public CRole
 {
-    friend class TFObject;
+    friend class CObjectBase;
     CC_SYNTHESIZE_RETAIN(TFHPBar*, m_pHPBar, HPBar);
 public:
     FACTORY_CREATE_FUNC(TFMonster);
@@ -47,6 +49,8 @@ protected:
     float m_hitTime;
     float m_speed;
 private:
+    TFPath* path_;
+    int splineIdx_;
 };
 
 #endif /* defined(__TheForce__TFMonster__) */

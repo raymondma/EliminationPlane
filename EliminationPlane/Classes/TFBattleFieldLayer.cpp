@@ -14,6 +14,7 @@
 #include "TFCollisionMgr.h"
 #include "TFItemInGameMgr.h"
 #include "EPPlane.h"
+#include "TFMonster.h"
 
 TFBattleFieldLayer* TFBattleFieldLayer::spInstance_ = NULL;
 
@@ -32,9 +33,11 @@ TFBattleFieldLayer* TFBattleFieldLayer::getInstance()
 
 TFBattleFieldLayer::TFBattleFieldLayer() :
 pBkg_(NULL)
-,pItemInGameMgr_(NULL)
-,pBattleField_(NULL)
-,m_isGameOver(false)
+, m_pHero(NULL)
+, m_pLand(NULL)
+, pItemInGameMgr_(NULL)
+, pBattleField_(NULL)
+, m_isGameOver(false)
 {
 }
 
@@ -46,6 +49,17 @@ TFBattleFieldLayer::~TFBattleFieldLayer()
 
     CC_SAFE_DELETE(pItemInGameMgr_);
     CC_SAFE_DELETE(pBattleField_);
+    
+    if (getLand())
+    {
+        getLand()->clearAll();
+        setLand(NULL);
+    }
+    if (getHero())
+    {
+        getHero()->clearAll();
+        setHero(NULL);
+    }
     setBkg(NULL);
     
     delete COLLISION_MANAGER;
@@ -111,10 +125,33 @@ bool TFBattleFieldLayer::init()
 //        return false;
 //    }
     
-//    EPPlane* player = dynamic_cast<EPPlane*>(TFObject::createObject("Plane0"));
-
+    setLand(dynamic_cast<EPLand*>(CObjectBase::createObject("Land")));
+    if (!getLand())
+    {
+        __CCLOGWITHFUNCTION("create land failed");
+        return false;
+    }
+    m_pLand->setSpritePosition(ccp(160, 80));
+    m_pLand->attachSpriteTo(this);
+    addChild(m_pLand);
+    
+    setHero(dynamic_cast<EPPlane*>(CObjectBase::createObject("Plane0")));
+    if (!getHero())
+    {
+        __CCLOGWITHFUNCTION("create hero failed");
+        return false;
+    }
+    m_pHero->setSpritePosition(ccp(160, 100));
+    m_pHero->attachSpriteTo(this);
+    addChild(m_pHero);
 	
     // TODO: get the param values from configuration file.
+    TFMonster* m1 = dynamic_cast<TFMonster*>(CObjectBase::createObject("M1"));
+    if (m1)
+    {
+        m1->attachSpriteTo(this);
+        addChild(m1, 0, 11);
+    }
     
     scheduleUpdate();
  
@@ -129,8 +166,10 @@ void TFBattleFieldLayer::update(float dt)
     {
         return;
     }
-    
+    m_pHero->update(dt);
     pBkg_->update(dt);
+    
+    getChildByTag(11)->update(dt);
 //    pItemInGameMgr_->update(dt);
 //    pBattleField_->update(dt);
     COLLISION_MANAGER->update();
@@ -175,7 +214,7 @@ void TFBattleFieldLayer::ccTouchesMoved(CCSet *pTouches,CCEvent *pEvent)
 
         wipeY_ += Delta.y;
         
-//        m_pHero->MoveDelta(Delta.x);
+        m_pHero->MoveDelta(Delta.x);
 	}
 }
 

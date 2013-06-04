@@ -16,7 +16,7 @@
 using namespace std;
 USING_NS_CC;
 
-class TFObject;
+class CObjectBase;
 
 class TFNodeContainer
 {
@@ -27,8 +27,8 @@ public:
     const CCArray* getInUseArray() const;
     unsigned int  getInUseCount();
     virtual bool initCache(const string& name, int num);
-    virtual TFObject* checkoutElement();
-    virtual void checkinElement(TFObject* elem);
+    virtual CObjectBase* checkoutElement();
+    virtual void checkinElement(CObjectBase* elem);
     virtual void clear();
 
 protected:

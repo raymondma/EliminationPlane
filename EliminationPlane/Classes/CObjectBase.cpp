@@ -1,23 +1,23 @@
 //
-//  TFObject.cpp
+//  CObjectBase.cpp
 //  TheForce
 //
 //  Created by Ray M on 13-3-5.
 //  Copyright (c) 2013年 Tencent. All rights reserved.
 //
 
-#include "TFObject.h"
+#include "CObjectBase.h"
 #include "TFGameObjectManager.h"
 
 
 
-DEFINE_DICTFUNC_STR(TFObject, CateName);
-DEFINE_DICTFUNC_STR(TFObject, Name);
+DEFINE_DICTFUNC_STR(CObjectBase, CateName);
+DEFINE_DICTFUNC_STR(CObjectBase, Name);
 
 
-TFObject* TFObject::createObject(const string& name)
+CObjectBase* CObjectBase::createObject(const string& name)
 {
-    TFObject* pObject = NULL;
+    CObjectBase* pObject = NULL;
     CCDictionary* pDict = GAME_OJBECT_MANAGER->getObjectByName(name);
     if (!pDict)
     {
@@ -41,7 +41,7 @@ TFObject* TFObject::createObject(const string& name)
 
 
 
-TFObject::TFObject() :
+CObjectBase::CObjectBase() :
 pObjectDictionary_(NULL)
 , m_isDead(false)
 {
@@ -50,14 +50,14 @@ pObjectDictionary_(NULL)
 
 
 
-TFObject::~TFObject()
+CObjectBase::~CObjectBase()
 {
     clearThis();
 }
 
 
 
-bool TFObject::init(CCDictionary* pObjectDict)
+bool CObjectBase::init(CCDictionary* pObjectDict)
 {
 //    CCAssert(NULL != pObjectDict, "pObjectDict can't be NULL");
     clearAll();
@@ -71,7 +71,7 @@ bool TFObject::init(CCDictionary* pObjectDict)
 
 
 
-void TFObject::clearAll()
+void CObjectBase::clearAll()
 {
     clearThis();
 }
@@ -79,7 +79,7 @@ void TFObject::clearAll()
 
 
 
-void TFObject::clearThis()
+void CObjectBase::clearThis()
 {
     turnOffCollision();
     setObjectDictionary(NULL);
@@ -89,7 +89,7 @@ void TFObject::clearThis()
 
 
 
-void TFObject::die()
+void CObjectBase::die()
 {
     m_isDead = true;
     turnOffCollision();
@@ -97,7 +97,7 @@ void TFObject::die()
 
 
 
-void TFObject::revive()
+void CObjectBase::revive()
 {
     m_isDead = false;
     turnOnCollision();
@@ -105,14 +105,14 @@ void TFObject::revive()
 
 
 
-bool TFObject::isDead() const
+bool CObjectBase::isDead() const
 {
     return m_isDead;
 }
 
 
 
-void TFObject::update(float dt)
+void CObjectBase::update(float dt)
 {
     CCArray* children = getChildren();
     CCObject* pObj;
@@ -124,14 +124,14 @@ void TFObject::update(float dt)
 
 
 
-int TFObject::getLevel()
+int CObjectBase::getLevel()
 {
     return 1;
 }
 
 
 
-bool TFObject::isNeedCheckCollision()
+bool CObjectBase::isNeedCheckCollision()
 {
     return !isDead();
 }

@@ -8,9 +8,23 @@
 
 #ifndef __TheForce__TFCollisionProtocol__
 #define __TheForce__TFCollisionProtocol__
+#include <map>
 
+using namespace std;
 
-class TFObject;
+class CObjectBase;
+class TFCollisionProtocol;
+
+typedef void (CObjectBase::*COLLISION_HANDLER)(TFCollisionProtocol*);
+#define collision_handler_selector(_SELECTOR) (COLLISION_HANDLER)(&_SELECTOR)
+
+enum GBCollisionType {
+    CT_INVALID = -1,
+    CT_HERO = 0,
+    CT_MONSTER,
+    CT_COIN,
+    CT_BULLET,
+};
 
 class TFCollisionProtocol
 {
@@ -23,6 +37,16 @@ public:
     virtual void turnOffCollision();
     virtual void turnOnCollision();
 protected:
+    typedef map<GBCollisionType, COLLISION_HANDLER> MICH;
+    typedef map<GBCollisionType, COLLISION_HANDLER>::iterator MICH_IT;
+    typedef map<GBCollisionType, COLLISION_HANDLER>::const_iterator MICH_CIT;
+    
+    virtual void addCollisionHandler(GBCollisionType type, COLLISION_HANDLER handler);
+    
+    virtual GBCollisionType getCollisionType();
+    
+    
+    MICH m_handlers;
 private:
 };
 

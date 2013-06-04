@@ -1,18 +1,18 @@
 //
-//  TFVisibleObject.cpp
+//  CVisibleObject.cpp
 //  TheForce
 //
 //  Created by Ray M on 13-3-7.
 //  Copyright (c) 2013年 Tencent. All rights reserved.
 //
 
-#include "TFVisibleObject.h"
+#include "CVisibleObject.h"
 
 
-DEFINE_DICTFUNC(TFVisibleObject, int, CollisionGroup, 0);
+DEFINE_DICTFUNC(CVisibleObject, int, CollisionGroup, 0);
 
 
-TFVisibleObject::TFVisibleObject() :
+CVisibleObject::CVisibleObject() :
 m_isCacheBoundingBox(false)
 {
     
@@ -20,23 +20,23 @@ m_isCacheBoundingBox(false)
 
 
 
-TFVisibleObject::~TFVisibleObject()
+CVisibleObject::~CVisibleObject()
 {
     clearThis();
 }
 
 
 
-void TFVisibleObject::update(float dt)
+void CVisibleObject::update(float dt)
 {
-    TFObject::update(dt);
+    CObjectBase::update(dt);
     
     updateBoundingBoxInWorldSpace();
 }
 
 
 
-void TFVisibleObject::updateBoundingBoxInWorldSpace()
+void CVisibleObject::updateBoundingBoxInWorldSpace()
 {
     if (!m_isCacheBoundingBox)
     {
@@ -55,16 +55,16 @@ void TFVisibleObject::updateBoundingBoxInWorldSpace()
 
 
 
-bool TFVisibleObject::isNeedCheckCollision()
+bool CVisibleObject::isNeedCheckCollision()
 {
-    return TFObject::isNeedCheckCollision() && isSpriteVisible();
+    return CObjectBase::isNeedCheckCollision() && isSpriteVisible();
 }
 
 
 
-bool TFVisibleObject::isCollsionWith(TFCollisionProtocol* object)
+bool CVisibleObject::isCollsionWith(TFCollisionProtocol* object)
 {
-    TFVisibleObject* pObj = dynamic_cast<TFVisibleObject*>(object);
+    CVisibleObject* pObj = dynamic_cast<CVisibleObject*>(object);
     if (NULL == pObj)
     {
         return false;
@@ -79,7 +79,7 @@ bool TFVisibleObject::isCollsionWith(TFCollisionProtocol* object)
 
 
 
-CCRect TFVisibleObject::getSpriteBoundingBox() const
+CCRect CVisibleObject::getSpriteBoundingBox() const
 {
     if (NULL != getInnerSprite())
     {
@@ -91,7 +91,7 @@ CCRect TFVisibleObject::getSpriteBoundingBox() const
 
 
 
-CCRect TFVisibleObject::getSpriteBoundingBoxInWorldSpace()
+CCRect CVisibleObject::getSpriteBoundingBoxInWorldSpace()
 {
     if (!m_isCacheBoundingBox)
     {
@@ -110,7 +110,7 @@ CCRect TFVisibleObject::getSpriteBoundingBoxInWorldSpace()
 
 
 
-CCPoint TFVisibleObject::getSpritePosition() const
+CCPoint CVisibleObject::getSpritePosition() const
 {
     if (NULL != getInnerSprite())
     {
@@ -122,7 +122,7 @@ CCPoint TFVisibleObject::getSpritePosition() const
 
 
 
-void TFVisibleObject::setSpritePosition(const CCPoint& point)
+void CVisibleObject::setSpritePosition(const CCPoint& point)
 {
     if (NULL != getInnerSprite())
     {
@@ -132,7 +132,7 @@ void TFVisibleObject::setSpritePosition(const CCPoint& point)
 
 
 
-void TFVisibleObject::setSpriteVisible(bool visible)
+void CVisibleObject::setSpriteVisible(bool visible)
 {
     if (NULL != getInnerSprite())
     {
@@ -142,7 +142,7 @@ void TFVisibleObject::setSpriteVisible(bool visible)
 
 
 
-bool TFVisibleObject::isSpriteVisible()
+bool CVisibleObject::isSpriteVisible()
 {
     if (NULL != getInnerSprite())
     {
@@ -155,7 +155,7 @@ bool TFVisibleObject::isSpriteVisible()
 
 
 
-CCSize TFVisibleObject::getSpriteContentSize()
+CCSize CVisibleObject::getSpriteContentSize()
 {
     if (NULL != getInnerSprite())
     {
@@ -167,7 +167,7 @@ CCSize TFVisibleObject::getSpriteContentSize()
 
 
 
-void TFVisibleObject::setSpriteZOrder(int z)
+void CVisibleObject::setSpriteZOrder(int z)
 {
     if (NULL != getInnerSprite())
     {
@@ -184,7 +184,7 @@ void TFVisibleObject::setSpriteZOrder(int z)
 
 
 
-bool TFVisibleObject::isSpriteInScreen()
+bool CVisibleObject::isSpriteInScreen()
 {
     if (NULL != getInnerSprite())
     {
@@ -202,7 +202,7 @@ bool TFVisibleObject::isSpriteInScreen()
 
 
 
-void TFVisibleObject::setSpriteScaleX(float sx)
+void CVisibleObject::setSpriteScaleX(float sx)
 {
     if (NULL != getInnerSprite())
     {
@@ -212,7 +212,7 @@ void TFVisibleObject::setSpriteScaleX(float sx)
 
 
 
-void TFVisibleObject::setSpriteScaleY(float sy)
+void CVisibleObject::setSpriteScaleY(float sy)
 {
     if (NULL != getInnerSprite())
     {
@@ -222,7 +222,7 @@ void TFVisibleObject::setSpriteScaleY(float sy)
 
 
 
-void TFVisibleObject::setSpriteScale(float s)
+void CVisibleObject::setSpriteScale(float s)
 {
     if (NULL != getInnerSprite())
     {
@@ -232,7 +232,7 @@ void TFVisibleObject::setSpriteScale(float s)
 
 
 
-void TFVisibleObject::removeSpriteFromParentAndCleanup(bool cleanup)
+void CVisibleObject::removeSpriteFromParentAndCleanup(bool cleanup)
 {
     if (NULL != getInnerSprite())
     {
@@ -242,7 +242,7 @@ void TFVisibleObject::removeSpriteFromParentAndCleanup(bool cleanup)
 
 
 
-bool TFVisibleObject::runSpriteAction(CCAction* action)
+bool CVisibleObject::runSpriteAction(CCAction* action)
 {
     CCAssert(NULL != action, "action can't be NULL!");
     if (NULL == getInnerSprite())
@@ -258,7 +258,7 @@ bool TFVisibleObject::runSpriteAction(CCAction* action)
 
 
 
-void TFVisibleObject::stopSpriteAllActions()
+void CVisibleObject::stopSpriteAllActions()
 {
     CCNode* node = getInnerSprite();
     
@@ -270,7 +270,7 @@ void TFVisibleObject::stopSpriteAllActions()
 
 
 
-void TFVisibleObject::setSpriteAnchorPoint(const CCPoint& point)
+void CVisibleObject::setSpriteAnchorPoint(const CCPoint& point)
 {
     if (NULL != getInnerSprite())
     {
@@ -280,7 +280,7 @@ void TFVisibleObject::setSpriteAnchorPoint(const CCPoint& point)
 
 
 
-bool TFVisibleObject::attachSpriteTo(CCNode* parent, int zOrder, int tag)
+bool CVisibleObject::attachSpriteTo(CCNode* parent, int zOrder, int tag)
 {
     CCAssert(NULL != parent, "parent can't be NULL");
     if (NULL != getInnerSprite())
@@ -293,7 +293,7 @@ bool TFVisibleObject::attachSpriteTo(CCNode* parent, int zOrder, int tag)
 
 
 
-int TFVisibleObject::getCollisionGroup()
+int CVisibleObject::getCollisionGroup()
 {
     return getCollisionGroupFromDict();
 }
@@ -301,25 +301,25 @@ int TFVisibleObject::getCollisionGroup()
 
 
 
-void TFVisibleObject::turnOffCollision()
+void CVisibleObject::turnOffCollision()
 {
-    TFObject::turnOffCollision();
+    CObjectBase::turnOffCollision();
     m_isCacheBoundingBox = false;
 }
 
 
 
-void TFVisibleObject::turnOnCollision()
+void CVisibleObject::turnOnCollision()
 {
-    TFObject::turnOnCollision();
+    CObjectBase::turnOnCollision();
     m_isCacheBoundingBox = true;
 }
 
 
 
-void TFVisibleObject::die()
+void CVisibleObject::die()
 {
-    TFObject::die();
+    CObjectBase::die();
 
     CCObject* pObj;
     CCARRAY_FOREACH(&m_runningActions, pObj)
@@ -334,23 +334,23 @@ void TFVisibleObject::die()
 
 
 
-void TFVisibleObject::revive()
+void CVisibleObject::revive()
 {
-    TFObject::revive();
+    CObjectBase::revive();
 }
 
 
 
-void TFVisibleObject::clearThis()
+void CVisibleObject::clearThis()
 {
     m_runningActions.removeAllObjects();
 }
 
 
 
-void TFVisibleObject::clearAll()
+void CVisibleObject::clearAll()
 {
-    TFObject::clearAll();
+    CObjectBase::clearAll();
     
     clearThis();
 }

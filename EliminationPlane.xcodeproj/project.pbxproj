@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5416ECE8170E8C8F004A5EF7 /* land.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 5416ECE7170E8C8F004A5EF7 /* land.ccbi */; };
+		5416ECEB170E8D5C004A5EF7 /* EPLand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5416ECE9170E8D5C004A5EF7 /* EPLand.cpp */; };
 		542A330A17092AB500534A51 /* EPPlane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 542A330817092AB500534A51 /* EPPlane.cpp */; };
+		5432D35B175CB4960097FE6E /* TFPath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5432D359175CB4960097FE6E /* TFPath.cpp */; };
+		5432D35D175CE5660097FE6E /* m1.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 5432D35C175CE5660097FE6E /* m1.ccbi */; };
+		54543F6B170C4AFB0067F471 /* plane0.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 54543F6A170C4AFB0067F471 /* plane0.ccbi */; };
+		54543F6D170C4BB50067F471 /* bullet0.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 54543F6C170C4BB50067F471 /* bullet0.ccbi */; };
+		54569015172826BE00F66A63 /* GameCollision.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54569014172826BE00F66A63 /* GameCollision.plist */; };
 		5462A27A170828A000C285A2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5462A279170828A000C285A2 /* QuartzCore.framework */; };
 		5462A27C170828A000C285A2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5462A27B170828A000C285A2 /* OpenGLES.framework */; };
 		5462A27E170828A000C285A2 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5462A27D170828A000C285A2 /* OpenAL.framework */; };
@@ -202,6 +209,10 @@
 		5462A50B170828A300C285A2 /* CCTableViewCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5462A50A170828A300C285A2 /* CCTableViewCell.cpp */; };
 		5462A50F170828A300C285A2 /* HttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5462A50E170828A300C285A2 /* HttpClient.cpp */; };
 		5462A518170828A300C285A2 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5462A517170828A300C285A2 /* AppDelegate.cpp */; };
+		5466C057175D829E009C3B84 /* CComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5466C053175D829E009C3B84 /* CComponent.cpp */; };
+		5466C058175D829E009C3B84 /* CComponentParameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5466C055175D829E009C3B84 /* CComponentParameter.cpp */; };
+		549BA6C2175C267300DA4288 /* test.pm in Resources */ = {isa = PBXBuildFile; fileRef = 549BA6C1175C267300DA4288 /* test.pm */; };
+		549BA6C5175C274900DA4288 /* TFPathManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 549BA6C3175C274900DA4288 /* TFPathManager.cpp */; };
 		54BD8AD317084D1700F7663B /* ga_actors-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54BD8ACF17084D1700F7663B /* ga_actors-hd.plist */; };
 		54BD8AD417084D1700F7663B /* ga_actors-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 54BD8AD017084D1700F7663B /* ga_actors-hd.pvr.ccz */; };
 		54BD8AD517084D1700F7663B /* ga_actors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54BD8AD117084D1700F7663B /* ga_actors.plist */; };
@@ -215,20 +226,20 @@
 		54BD8AE517084EDF00F7663B /* ga_scenes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54BD8ADD17084EDF00F7663B /* ga_scenes.plist */; };
 		54BD8AE617084EDF00F7663B /* ga_scenes.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 54BD8ADE17084EDF00F7663B /* ga_scenes.pvr.ccz */; };
 		54D5A5351708360900485E62 /* TFBattleFieldLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5331708360900485E62 /* TFBattleFieldLayer.cpp */; };
-		54D5A54B1708371500485E62 /* TFBulletBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5371708371500485E62 /* TFBulletBase.cpp */; };
+		54D5A54B1708371500485E62 /* CBulletBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5371708371500485E62 /* CBulletBase.cpp */; };
 		54D5A54C1708371500485E62 /* TFCollisionProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5391708371500485E62 /* TFCollisionProtocol.cpp */; };
 		54D5A54D1708371500485E62 /* TFHPBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A53B1708371500485E62 /* TFHPBar.cpp */; };
 		54D5A54E1708371500485E62 /* TFMonster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A53D1708371500485E62 /* TFMonster.cpp */; };
-		54D5A54F1708371500485E62 /* TFObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A53F1708371500485E62 /* TFObject.cpp */; };
-		54D5A5501708371500485E62 /* TFRole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5411708371500485E62 /* TFRole.cpp */; };
-		54D5A5511708371500485E62 /* TFScale9SpriteObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5431708371500485E62 /* TFScale9SpriteObject.cpp */; };
-		54D5A5521708371500485E62 /* TFSpriteObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5451708371500485E62 /* TFSpriteObject.cpp */; };
-		54D5A5531708371500485E62 /* TFStateBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5471708371500485E62 /* TFStateBase.cpp */; };
-		54D5A5541708371500485E62 /* TFVisibleObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5491708371500485E62 /* TFVisibleObject.cpp */; };
+		54D5A54F1708371500485E62 /* CObjectBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A53F1708371500485E62 /* CObjectBase.cpp */; };
+		54D5A5501708371500485E62 /* CRole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5411708371500485E62 /* CRole.cpp */; };
+		54D5A5511708371500485E62 /* CScale9SpriteObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5431708371500485E62 /* CScale9SpriteObject.cpp */; };
+		54D5A5521708371500485E62 /* CSpriteObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5451708371500485E62 /* CSpriteObject.cpp */; };
+		54D5A5531708371500485E62 /* CState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5471708371500485E62 /* CState.cpp */; };
+		54D5A5541708371500485E62 /* CVisibleObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5491708371500485E62 /* CVisibleObject.cpp */; };
 		54D5A55B1708372C00485E62 /* TFCollisionMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5551708372C00485E62 /* TFCollisionMgr.cpp */; };
 		54D5A55C1708372C00485E62 /* TFGameObjectManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5571708372C00485E62 /* TFGameObjectManager.cpp */; };
 		54D5A55D1708372C00485E62 /* TFTexturesCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5591708372C00485E62 /* TFTexturesCache.cpp */; };
-		54D5A5611708375100485E62 /* TFGun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A55E1708375100485E62 /* TFGun.cpp */; };
+		54D5A5611708375100485E62 /* CGun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A55E1708375100485E62 /* CGun.cpp */; };
 		54D5A5681708376200485E62 /* TFNodeContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5621708376200485E62 /* TFNodeContainer.cpp */; };
 		54D5A5691708376200485E62 /* TFPListReaderHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5641708376200485E62 /* TFPListReaderHelper.cpp */; };
 		54D5A56A1708376200485E62 /* TFSingleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5661708376200485E62 /* TFSingleton.cpp */; };
@@ -244,12 +255,22 @@
 		54D5A83B17083FD200485E62 /* yahei.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 54D5A83717083FD200485E62 /* yahei.fnt */; };
 		54D5A83C17083FD200485E62 /* yahei.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D5A83817083FD200485E62 /* yahei.png */; };
 		54D5A83E1708435E00485E62 /* GameObject.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54D5A83D1708435E00485E62 /* GameObject.plist */; };
+		54EAAF7C17282ED200231A45 /* CCDictionarySaver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54EAAF7A17282ED200231A45 /* CCDictionarySaver.cpp */; };
 		71B83299170BE8D30035BA58 /* TFObjectFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71B83297170BE8D30035BA58 /* TFObjectFactory.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5416ECE7170E8C8F004A5EF7 /* land.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = land.ccbi; path = Resources/land.ccbi; sourceTree = "<group>"; };
+		5416ECE9170E8D5C004A5EF7 /* EPLand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EPLand.cpp; path = Classes/EPLand.cpp; sourceTree = "<group>"; };
+		5416ECEA170E8D5C004A5EF7 /* EPLand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPLand.h; path = Classes/EPLand.h; sourceTree = "<group>"; };
 		542A330817092AB500534A51 /* EPPlane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EPPlane.cpp; path = Classes/EPPlane.cpp; sourceTree = "<group>"; };
 		542A330917092AB500534A51 /* EPPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPPlane.h; path = Classes/EPPlane.h; sourceTree = "<group>"; };
+		5432D359175CB4960097FE6E /* TFPath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFPath.cpp; path = Classes/TFPath.cpp; sourceTree = "<group>"; };
+		5432D35A175CB4960097FE6E /* TFPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFPath.h; path = Classes/TFPath.h; sourceTree = "<group>"; };
+		5432D35C175CE5660097FE6E /* m1.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = m1.ccbi; path = Resources/m1.ccbi; sourceTree = "<group>"; };
+		54543F6A170C4AFB0067F471 /* plane0.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = plane0.ccbi; path = Resources/plane0.ccbi; sourceTree = "<group>"; };
+		54543F6C170C4BB50067F471 /* bullet0.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = bullet0.ccbi; path = Resources/bullet0.ccbi; sourceTree = "<group>"; };
+		54569014172826BE00F66A63 /* GameCollision.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = GameCollision.plist; path = Resources/GameCollision.plist; sourceTree = "<group>"; };
 		5462A276170828A000C285A2 /* EliminationPlane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EliminationPlane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5462A279170828A000C285A2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5462A27B170828A000C285A2 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -677,6 +698,13 @@
 		5462A514170828A300C285A2 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		5462A516170828A300C285A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		5462A517170828A300C285A2 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
+		5466C053175D829E009C3B84 /* CComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CComponent.cpp; path = Classes/CComponent.cpp; sourceTree = "<group>"; };
+		5466C054175D829E009C3B84 /* CComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CComponent.h; path = Classes/CComponent.h; sourceTree = "<group>"; };
+		5466C055175D829E009C3B84 /* CComponentParameter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CComponentParameter.cpp; path = Classes/CComponentParameter.cpp; sourceTree = "<group>"; };
+		5466C056175D829E009C3B84 /* CComponentParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CComponentParameter.h; path = Classes/CComponentParameter.h; sourceTree = "<group>"; };
+		549BA6C1175C267300DA4288 /* test.pm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; name = test.pm; path = Resources/test.pm; sourceTree = "<group>"; };
+		549BA6C3175C274900DA4288 /* TFPathManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFPathManager.cpp; path = Classes/TFPathManager.cpp; sourceTree = "<group>"; };
+		549BA6C4175C274900DA4288 /* TFPathManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFPathManager.h; path = Classes/TFPathManager.h; sourceTree = "<group>"; };
 		54BD8ACF17084D1700F7663B /* ga_actors-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ga_actors-hd.plist"; path = "Resources/ga_actors-hd.plist"; sourceTree = "<group>"; };
 		54BD8AD017084D1700F7663B /* ga_actors-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ga_actors-hd.pvr.ccz"; path = "Resources/ga_actors-hd.pvr.ccz"; sourceTree = "<group>"; };
 		54BD8AD117084D1700F7663B /* ga_actors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ga_actors.plist; path = Resources/ga_actors.plist; sourceTree = "<group>"; };
@@ -692,35 +720,35 @@
 		54D5A5311708348600485E62 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = Classes/Common.h; sourceTree = "<group>"; };
 		54D5A5331708360900485E62 /* TFBattleFieldLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFBattleFieldLayer.cpp; path = Classes/TFBattleFieldLayer.cpp; sourceTree = "<group>"; };
 		54D5A5341708360900485E62 /* TFBattleFieldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFBattleFieldLayer.h; path = Classes/TFBattleFieldLayer.h; sourceTree = "<group>"; };
-		54D5A5371708371500485E62 /* TFBulletBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFBulletBase.cpp; path = Classes/TFBulletBase.cpp; sourceTree = "<group>"; };
-		54D5A5381708371500485E62 /* TFBulletBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFBulletBase.h; path = Classes/TFBulletBase.h; sourceTree = "<group>"; };
+		54D5A5371708371500485E62 /* CBulletBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CBulletBase.cpp; path = Classes/CBulletBase.cpp; sourceTree = "<group>"; };
+		54D5A5381708371500485E62 /* CBulletBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBulletBase.h; path = Classes/CBulletBase.h; sourceTree = "<group>"; };
 		54D5A5391708371500485E62 /* TFCollisionProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFCollisionProtocol.cpp; path = Classes/TFCollisionProtocol.cpp; sourceTree = "<group>"; };
 		54D5A53A1708371500485E62 /* TFCollisionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFCollisionProtocol.h; path = Classes/TFCollisionProtocol.h; sourceTree = "<group>"; };
 		54D5A53B1708371500485E62 /* TFHPBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFHPBar.cpp; path = Classes/TFHPBar.cpp; sourceTree = "<group>"; };
 		54D5A53C1708371500485E62 /* TFHPBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHPBar.h; path = Classes/TFHPBar.h; sourceTree = "<group>"; };
 		54D5A53D1708371500485E62 /* TFMonster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFMonster.cpp; path = Classes/TFMonster.cpp; sourceTree = "<group>"; };
 		54D5A53E1708371500485E62 /* TFMonster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFMonster.h; path = Classes/TFMonster.h; sourceTree = "<group>"; };
-		54D5A53F1708371500485E62 /* TFObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFObject.cpp; path = Classes/TFObject.cpp; sourceTree = "<group>"; };
-		54D5A5401708371500485E62 /* TFObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFObject.h; path = Classes/TFObject.h; sourceTree = "<group>"; };
-		54D5A5411708371500485E62 /* TFRole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFRole.cpp; path = Classes/TFRole.cpp; sourceTree = "<group>"; };
-		54D5A5421708371500485E62 /* TFRole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFRole.h; path = Classes/TFRole.h; sourceTree = "<group>"; };
-		54D5A5431708371500485E62 /* TFScale9SpriteObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFScale9SpriteObject.cpp; path = Classes/TFScale9SpriteObject.cpp; sourceTree = "<group>"; };
-		54D5A5441708371500485E62 /* TFScale9SpriteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFScale9SpriteObject.h; path = Classes/TFScale9SpriteObject.h; sourceTree = "<group>"; };
-		54D5A5451708371500485E62 /* TFSpriteObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFSpriteObject.cpp; path = Classes/TFSpriteObject.cpp; sourceTree = "<group>"; };
-		54D5A5461708371500485E62 /* TFSpriteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFSpriteObject.h; path = Classes/TFSpriteObject.h; sourceTree = "<group>"; };
-		54D5A5471708371500485E62 /* TFStateBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFStateBase.cpp; path = Classes/TFStateBase.cpp; sourceTree = "<group>"; };
-		54D5A5481708371500485E62 /* TFStateBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFStateBase.h; path = Classes/TFStateBase.h; sourceTree = "<group>"; };
-		54D5A5491708371500485E62 /* TFVisibleObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFVisibleObject.cpp; path = Classes/TFVisibleObject.cpp; sourceTree = "<group>"; };
-		54D5A54A1708371500485E62 /* TFVisibleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFVisibleObject.h; path = Classes/TFVisibleObject.h; sourceTree = "<group>"; };
+		54D5A53F1708371500485E62 /* CObjectBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CObjectBase.cpp; path = Classes/CObjectBase.cpp; sourceTree = "<group>"; };
+		54D5A5401708371500485E62 /* CObjectBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CObjectBase.h; path = Classes/CObjectBase.h; sourceTree = "<group>"; };
+		54D5A5411708371500485E62 /* CRole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CRole.cpp; path = Classes/CRole.cpp; sourceTree = "<group>"; };
+		54D5A5421708371500485E62 /* CRole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRole.h; path = Classes/CRole.h; sourceTree = "<group>"; };
+		54D5A5431708371500485E62 /* CScale9SpriteObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CScale9SpriteObject.cpp; path = Classes/CScale9SpriteObject.cpp; sourceTree = "<group>"; };
+		54D5A5441708371500485E62 /* CScale9SpriteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CScale9SpriteObject.h; path = Classes/CScale9SpriteObject.h; sourceTree = "<group>"; };
+		54D5A5451708371500485E62 /* CSpriteObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSpriteObject.cpp; path = Classes/CSpriteObject.cpp; sourceTree = "<group>"; };
+		54D5A5461708371500485E62 /* CSpriteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSpriteObject.h; path = Classes/CSpriteObject.h; sourceTree = "<group>"; };
+		54D5A5471708371500485E62 /* CState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CState.cpp; path = Classes/CState.cpp; sourceTree = "<group>"; };
+		54D5A5481708371500485E62 /* CState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CState.h; path = Classes/CState.h; sourceTree = "<group>"; };
+		54D5A5491708371500485E62 /* CVisibleObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CVisibleObject.cpp; path = Classes/CVisibleObject.cpp; sourceTree = "<group>"; };
+		54D5A54A1708371500485E62 /* CVisibleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVisibleObject.h; path = Classes/CVisibleObject.h; sourceTree = "<group>"; };
 		54D5A5551708372C00485E62 /* TFCollisionMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFCollisionMgr.cpp; path = Classes/TFCollisionMgr.cpp; sourceTree = "<group>"; };
 		54D5A5561708372C00485E62 /* TFCollisionMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFCollisionMgr.h; path = Classes/TFCollisionMgr.h; sourceTree = "<group>"; };
 		54D5A5571708372C00485E62 /* TFGameObjectManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFGameObjectManager.cpp; path = Classes/TFGameObjectManager.cpp; sourceTree = "<group>"; };
 		54D5A5581708372C00485E62 /* TFGameObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFGameObjectManager.h; path = Classes/TFGameObjectManager.h; sourceTree = "<group>"; };
 		54D5A5591708372C00485E62 /* TFTexturesCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFTexturesCache.cpp; path = Classes/TFTexturesCache.cpp; sourceTree = "<group>"; };
 		54D5A55A1708372C00485E62 /* TFTexturesCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFTexturesCache.h; path = Classes/TFTexturesCache.h; sourceTree = "<group>"; };
-		54D5A55E1708375100485E62 /* TFGun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFGun.cpp; path = Classes/TFGun.cpp; sourceTree = "<group>"; };
-		54D5A55F1708375100485E62 /* TFGun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFGun.h; path = Classes/TFGun.h; sourceTree = "<group>"; };
-		54D5A5601708375100485E62 /* TFSpriteActionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFSpriteActionDelegate.h; path = Classes/TFSpriteActionDelegate.h; sourceTree = "<group>"; };
+		54D5A55E1708375100485E62 /* CGun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CGun.cpp; path = Classes/CGun.cpp; sourceTree = "<group>"; };
+		54D5A55F1708375100485E62 /* CGun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CGun.h; path = Classes/CGun.h; sourceTree = "<group>"; };
+		54D5A5601708375100485E62 /* CSpriteActionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSpriteActionDelegate.h; path = Classes/CSpriteActionDelegate.h; sourceTree = "<group>"; };
 		54D5A5621708376200485E62 /* TFNodeContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFNodeContainer.cpp; path = Classes/TFNodeContainer.cpp; sourceTree = "<group>"; };
 		54D5A5631708376200485E62 /* TFNodeContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFNodeContainer.h; path = Classes/TFNodeContainer.h; sourceTree = "<group>"; };
 		54D5A5641708376200485E62 /* TFPListReaderHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFPListReaderHelper.cpp; path = Classes/TFPListReaderHelper.cpp; sourceTree = "<group>"; };
@@ -746,6 +774,8 @@
 		54D5A83717083FD200485E62 /* yahei.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = yahei.fnt; path = Resources/yahei.fnt; sourceTree = "<group>"; };
 		54D5A83817083FD200485E62 /* yahei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yahei.png; path = Resources/yahei.png; sourceTree = "<group>"; };
 		54D5A83D1708435E00485E62 /* GameObject.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = GameObject.plist; path = Resources/GameObject.plist; sourceTree = "<group>"; };
+		54EAAF7A17282ED200231A45 /* CCDictionarySaver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCDictionarySaver.cpp; path = Classes/CCDictionarySaver.cpp; sourceTree = "<group>"; };
+		54EAAF7B17282ED200231A45 /* CCDictionarySaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCDictionarySaver.h; path = Classes/CCDictionarySaver.h; sourceTree = "<group>"; };
 		71B83297170BE8D30035BA58 /* TFObjectFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFObjectFactory.cpp; path = Classes/TFObjectFactory.cpp; sourceTree = "<group>"; };
 		71B83298170BE8D30035BA58 /* TFObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFObjectFactory.h; path = Classes/TFObjectFactory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -792,9 +822,22 @@
 		542A33071709261600534A51 /* datas */ = {
 			isa = PBXGroup;
 			children = (
+				549BA6C1175C267300DA4288 /* test.pm */,
 				54D5A83D1708435E00485E62 /* GameObject.plist */,
+				54569014172826BE00F66A63 /* GameCollision.plist */,
 			);
 			name = datas;
+			sourceTree = "<group>";
+		};
+		54543F69170C4ADC0067F471 /* ccbi */ = {
+			isa = PBXGroup;
+			children = (
+				5432D35C175CE5660097FE6E /* m1.ccbi */,
+				5416ECE7170E8C8F004A5EF7 /* land.ccbi */,
+				54543F6C170C4BB50067F471 /* bullet0.ccbi */,
+				54543F6A170C4AFB0067F471 /* plane0.ccbi */,
+			);
+			name = ccbi;
 			sourceTree = "<group>";
 		};
 		5462A26D170828A000C285A2 = {
@@ -844,6 +887,7 @@
 		5462A28A170828A000C285A2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				54543F69170C4ADC0067F471 /* ccbi */,
 				542A33071709261600534A51 /* datas */,
 				542A33061709260700534A51 /* arts */,
 				54D5A83417083FC000485E62 /* font */,
@@ -1659,14 +1703,52 @@
 		5462A515170828A300C285A2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5466C37D175D8A19009C3B84 /* BaseClasses */,
+				5466C052175D8291009C3B84 /* Component */,
 				5462A516170828A300C285A2 /* AppDelegate.h */,
 				5462A517170828A300C285A2 /* AppDelegate.cpp */,
 				54D5A5311708348600485E62 /* Common.h */,
 				549AC05C17082F7100489A5E /* Objects */,
 				54D5A536170836D000485E62 /* DAC */,
 				54D5A5321708351000485E62 /* Scenes */,
+				54EAAF7A17282ED200231A45 /* CCDictionarySaver.cpp */,
+				54EAAF7B17282ED200231A45 /* CCDictionarySaver.h */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		5466C052175D8291009C3B84 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				5466C053175D829E009C3B84 /* CComponent.cpp */,
+				5466C054175D829E009C3B84 /* CComponent.h */,
+				5466C055175D829E009C3B84 /* CComponentParameter.cpp */,
+				5466C056175D829E009C3B84 /* CComponentParameter.h */,
+			);
+			name = Component;
+			sourceTree = "<group>";
+		};
+		5466C37D175D8A19009C3B84 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				54D5A55E1708375100485E62 /* CGun.cpp */,
+				54D5A55F1708375100485E62 /* CGun.h */,
+				54D5A53F1708371500485E62 /* CObjectBase.cpp */,
+				54D5A5401708371500485E62 /* CObjectBase.h */,
+				54D5A5471708371500485E62 /* CState.cpp */,
+				54D5A5481708371500485E62 /* CState.h */,
+				54D5A5491708371500485E62 /* CVisibleObject.cpp */,
+				54D5A54A1708371500485E62 /* CVisibleObject.h */,
+				54D5A5431708371500485E62 /* CScale9SpriteObject.cpp */,
+				54D5A5441708371500485E62 /* CScale9SpriteObject.h */,
+				54D5A5451708371500485E62 /* CSpriteObject.cpp */,
+				54D5A5461708371500485E62 /* CSpriteObject.h */,
+				54D5A5371708371500485E62 /* CBulletBase.cpp */,
+				54D5A5381708371500485E62 /* CBulletBase.h */,
+				54D5A5411708371500485E62 /* CRole.cpp */,
+				54D5A5421708371500485E62 /* CRole.h */,
+			);
+			name = BaseClasses;
 			sourceTree = "<group>";
 		};
 		549AC05C17082F7100489A5E /* Objects */ = {
@@ -1676,31 +1758,17 @@
 				54D5A57B17083ADF00485E62 /* TFItemInGame.h */,
 				54D5A574170838B400485E62 /* TFBatchNodeObject.cpp */,
 				54D5A575170838B400485E62 /* TFBatchNodeObject.h */,
-				54D5A55E1708375100485E62 /* TFGun.cpp */,
-				54D5A55F1708375100485E62 /* TFGun.h */,
-				54D5A5601708375100485E62 /* TFSpriteActionDelegate.h */,
-				54D5A5371708371500485E62 /* TFBulletBase.cpp */,
-				54D5A5381708371500485E62 /* TFBulletBase.h */,
+				54D5A5601708375100485E62 /* CSpriteActionDelegate.h */,
 				54D5A5391708371500485E62 /* TFCollisionProtocol.cpp */,
 				54D5A53A1708371500485E62 /* TFCollisionProtocol.h */,
 				54D5A53B1708371500485E62 /* TFHPBar.cpp */,
 				54D5A53C1708371500485E62 /* TFHPBar.h */,
 				54D5A53D1708371500485E62 /* TFMonster.cpp */,
 				54D5A53E1708371500485E62 /* TFMonster.h */,
-				54D5A53F1708371500485E62 /* TFObject.cpp */,
-				54D5A5401708371500485E62 /* TFObject.h */,
-				54D5A5411708371500485E62 /* TFRole.cpp */,
-				54D5A5421708371500485E62 /* TFRole.h */,
-				54D5A5431708371500485E62 /* TFScale9SpriteObject.cpp */,
-				54D5A5441708371500485E62 /* TFScale9SpriteObject.h */,
-				54D5A5451708371500485E62 /* TFSpriteObject.cpp */,
-				54D5A5461708371500485E62 /* TFSpriteObject.h */,
-				54D5A5471708371500485E62 /* TFStateBase.cpp */,
-				54D5A5481708371500485E62 /* TFStateBase.h */,
-				54D5A5491708371500485E62 /* TFVisibleObject.cpp */,
-				54D5A54A1708371500485E62 /* TFVisibleObject.h */,
 				542A330817092AB500534A51 /* EPPlane.cpp */,
 				542A330917092AB500534A51 /* EPPlane.h */,
+				5416ECE9170E8D5C004A5EF7 /* EPLand.cpp */,
+				5416ECEA170E8D5C004A5EF7 /* EPLand.h */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -1741,6 +1809,10 @@
 				54D5A55A1708372C00485E62 /* TFTexturesCache.h */,
 				71B83297170BE8D30035BA58 /* TFObjectFactory.cpp */,
 				71B83298170BE8D30035BA58 /* TFObjectFactory.h */,
+				549BA6C3175C274900DA4288 /* TFPathManager.cpp */,
+				549BA6C4175C274900DA4288 /* TFPathManager.h */,
+				5432D359175CB4960097FE6E /* TFPath.cpp */,
+				5432D35A175CB4960097FE6E /* TFPath.h */,
 			);
 			name = DAC;
 			sourceTree = "<group>";
@@ -1835,6 +1907,12 @@
 				54BD8AE417084EDF00F7663B /* ga_scenes-hd.pvr.ccz in Resources */,
 				54BD8AE517084EDF00F7663B /* ga_scenes.plist in Resources */,
 				54BD8AE617084EDF00F7663B /* ga_scenes.pvr.ccz in Resources */,
+				54543F6B170C4AFB0067F471 /* plane0.ccbi in Resources */,
+				54543F6D170C4BB50067F471 /* bullet0.ccbi in Resources */,
+				5416ECE8170E8C8F004A5EF7 /* land.ccbi in Resources */,
+				54569015172826BE00F66A63 /* GameCollision.plist in Resources */,
+				549BA6C2175C267300DA4288 /* test.pm in Resources */,
+				5432D35D175CE5660097FE6E /* m1.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2019,20 +2097,20 @@
 				5462A50F170828A300C285A2 /* HttpClient.cpp in Sources */,
 				5462A518170828A300C285A2 /* AppDelegate.cpp in Sources */,
 				54D5A5351708360900485E62 /* TFBattleFieldLayer.cpp in Sources */,
-				54D5A54B1708371500485E62 /* TFBulletBase.cpp in Sources */,
+				54D5A54B1708371500485E62 /* CBulletBase.cpp in Sources */,
 				54D5A54C1708371500485E62 /* TFCollisionProtocol.cpp in Sources */,
 				54D5A54D1708371500485E62 /* TFHPBar.cpp in Sources */,
 				54D5A54E1708371500485E62 /* TFMonster.cpp in Sources */,
-				54D5A54F1708371500485E62 /* TFObject.cpp in Sources */,
-				54D5A5501708371500485E62 /* TFRole.cpp in Sources */,
-				54D5A5511708371500485E62 /* TFScale9SpriteObject.cpp in Sources */,
-				54D5A5521708371500485E62 /* TFSpriteObject.cpp in Sources */,
-				54D5A5531708371500485E62 /* TFStateBase.cpp in Sources */,
-				54D5A5541708371500485E62 /* TFVisibleObject.cpp in Sources */,
+				54D5A54F1708371500485E62 /* CObjectBase.cpp in Sources */,
+				54D5A5501708371500485E62 /* CRole.cpp in Sources */,
+				54D5A5511708371500485E62 /* CScale9SpriteObject.cpp in Sources */,
+				54D5A5521708371500485E62 /* CSpriteObject.cpp in Sources */,
+				54D5A5531708371500485E62 /* CState.cpp in Sources */,
+				54D5A5541708371500485E62 /* CVisibleObject.cpp in Sources */,
 				54D5A55B1708372C00485E62 /* TFCollisionMgr.cpp in Sources */,
 				54D5A55C1708372C00485E62 /* TFGameObjectManager.cpp in Sources */,
 				54D5A55D1708372C00485E62 /* TFTexturesCache.cpp in Sources */,
-				54D5A5611708375100485E62 /* TFGun.cpp in Sources */,
+				54D5A5611708375100485E62 /* CGun.cpp in Sources */,
 				54D5A5681708376200485E62 /* TFNodeContainer.cpp in Sources */,
 				54D5A5691708376200485E62 /* TFPListReaderHelper.cpp in Sources */,
 				54D5A56A1708376200485E62 /* TFSingleton.cpp in Sources */,
@@ -2045,6 +2123,12 @@
 				54D5A57F17083B8100485E62 /* TFItemInGameMgr.cpp in Sources */,
 				542A330A17092AB500534A51 /* EPPlane.cpp in Sources */,
 				71B83299170BE8D30035BA58 /* TFObjectFactory.cpp in Sources */,
+				5416ECEB170E8D5C004A5EF7 /* EPLand.cpp in Sources */,
+				54EAAF7C17282ED200231A45 /* CCDictionarySaver.cpp in Sources */,
+				549BA6C5175C274900DA4288 /* TFPathManager.cpp in Sources */,
+				5432D35B175CB4960097FE6E /* TFPath.cpp in Sources */,
+				5466C057175D829E009C3B84 /* CComponent.cpp in Sources */,
+				5466C058175D829E009C3B84 /* CComponentParameter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

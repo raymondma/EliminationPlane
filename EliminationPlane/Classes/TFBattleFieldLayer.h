@@ -11,14 +11,18 @@
 #include "TFBackground.h"
 #include "TFBattleFieldDataMgr.h"
 #include "TFItemInGameMgr.h"
-
+#include "EPPlane.h"
+#include "EPLand.h"
 
 USING_NS_CC;
 using namespace std;
 
+
 class TFBattleFieldLayer : public CCLayer
 {
     CC_SYNTHESIZE_RETAIN(TFBackground*, pBkg_, Bkg);
+    CC_SYNTHESIZE_RETAIN(EPPlane*, m_pHero, Hero);
+    CC_SYNTHESIZE_RETAIN(EPLand*, m_pLand, Land);
 public:
     static TFBattleFieldLayer* getInstance();
     
@@ -41,7 +45,6 @@ protected:
     void onGameOver(CCObject* obj);
 
     bool loadConfig();
-
 private:
     static TFBattleFieldLayer* spInstance_;
     TFItemInGameMgr* pItemInGameMgr_;

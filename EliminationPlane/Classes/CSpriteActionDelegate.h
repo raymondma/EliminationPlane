@@ -1,5 +1,5 @@
 //
-//  TFSpriteActionDelegate.h
+//  CSpriteActionDelegate.h
 //  TheForce
 //
 //  Created by Ray M on 13-3-18.
@@ -9,12 +9,12 @@
 #ifndef TheForce_TFSpriteActionDelegate_h
 #define TheForce_TFSpriteActionDelegate_h
 
-class TFSpriteObject;
+class CSpriteObject;
 
-class TFSpriteActionDelegate
+class CSpriteActionDelegate
 {
 public:
-    virtual void completedAction(TFSpriteObject* pObj, const char* name) = 0;
+    virtual void completedAction(CSpriteObject* pObj, const char* name) = 0;
 };
 
 #endif

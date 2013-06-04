@@ -34,7 +34,7 @@ enum MONSTER_TYPE
 
 class TFHero;
 
-class TFBattleFieldDataMgr : public TFObject, public TFBatchNodeObject
+class TFBattleFieldDataMgr : public CObjectBase, public TFBatchNodeObject
 {
 public:
     TFBattleFieldDataMgr();

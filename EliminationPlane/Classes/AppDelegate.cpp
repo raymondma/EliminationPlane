@@ -14,8 +14,9 @@
 #include "TFBattleFieldLayer.h"
 #include "TFTexturesCache.h"
 #include "TFObjectFactory.h"
+#include "TFPathManager.h"
 
-#include "TFRole.h"
+#include "CRole.h"
 
 #include <time.h>
 
@@ -59,6 +60,12 @@ bool AppDelegate::applicationDidFinishLaunching()
     {
         return false;
     }
+    
+    if (!PATH_MANAGER->initialize())
+    {
+        return false;
+    }
+    
     
     BATTLE_FIELD_LAYER->init();
     CCScene *scene = CCScene::create();

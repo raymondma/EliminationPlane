@@ -1,5 +1,5 @@
 //
-//  TFGun.h
+//  CGun.h
 //  TheForce
 //
 //  Created by 马 俊 on 13-2-3.
@@ -14,25 +14,25 @@
 #include <string>
 
 #include "TFNodeContainer.h"
-#include "TFObject.h"
+#include "CObjectBase.h"
 #include "TFBatchNodeObject.h"
 
 
 using namespace std;
 USING_NS_CC;
 
-class TFRole;
-class TFBulletBase;
+class CRole;
+class CBulletBase;
 
-class TFGun : public TFObject, public TFBatchNodeObject
+class CGun : public CObjectBase, public TFBatchNodeObject
 {
-    friend class TFObject;
+    friend class CObjectBase;
 public:
-    FACTORY_CREATE_FUNC(TFGun);
-    virtual ~TFGun();
+    FACTORY_CREATE_FUNC(CGun);
+    virtual ~CGun();
     virtual bool init(CCDictionary* pObjectDict);
     
-    virtual void setOwner(TFRole* role);
+    virtual void setOwner(CRole* role);
     virtual void update(float dt);
     virtual void shoot(float dt);
     virtual void clearAll();
@@ -47,11 +47,11 @@ public:
     DECLARE_DICTFUNC(int, CacheNum);
     DECLARE_DICTFUNC(float, Frequency);
 protected:
-    TFGun();
+    CGun();
     void clearThis();
     virtual GameArts getBatchNodeName();
     
-    TFRole* m_pRole;
+    CRole* m_pRole;
 
     float m_lastShootTime;
     float m_frequency;

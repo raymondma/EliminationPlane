@@ -9,7 +9,7 @@
 #include "TFNodeContainer.h"
 #include "TFTexturesCache.h"
 #include "TFBattleFieldLayer.h"
-#include "TFObject.h"
+#include "CObjectBase.h"
 
 
 TFNodeContainer::TFNodeContainer()
@@ -26,14 +26,14 @@ TFNodeContainer::~TFNodeContainer()
 
 
 
-TFObject* TFNodeContainer::checkoutElement()
+CObjectBase* TFNodeContainer::checkoutElement()
 {
     if (containerUnUseArray_.count() == 0)
     {
         return NULL;
     }
     
-    TFObject* pObj = static_cast<TFObject*>(containerUnUseArray_.lastObject());
+    CObjectBase* pObj = static_cast<CObjectBase*>(containerUnUseArray_.lastObject());
     
     containerInUseArray_.addObject(pObj);
     containerUnUseArray_.removeLastObject();
@@ -48,7 +48,7 @@ TFObject* TFNodeContainer::checkoutElement()
 
 
 
-void TFNodeContainer::checkinElement(TFObject* elem)
+void TFNodeContainer::checkinElement(CObjectBase* elem)
 {
     CC_ASSERT(NULL != elem);
     
@@ -74,7 +74,7 @@ void TFNodeContainer::clear()
     CCObject* pObj;
     CCARRAY_FOREACH(&containerInUseArray_, pObj)
     {
-        TFObject* pTFObj = dynamic_cast<TFObject*>(pObj);
+        CObjectBase* pTFObj = dynamic_cast<CObjectBase*>(pObj);
         if (NULL != pTFObj)
         {
             pTFObj->clearAll();
@@ -82,7 +82,7 @@ void TFNodeContainer::clear()
     }
     CCARRAY_FOREACH(&containerUnUseArray_, pObj)
     {
-        TFObject* pTFObj = dynamic_cast<TFObject*>(pObj);
+        CObjectBase* pTFObj = dynamic_cast<CObjectBase*>(pObj);
         if (NULL != pTFObj)
         {
             pTFObj->clearAll();
@@ -98,7 +98,7 @@ bool TFNodeContainer::initCache(const string& name, int num)
 {
     for (int i = 0; i < num; ++i)
     {
-        TFObject* pObj = TFObject::createObject(name);
+        CObjectBase* pObj = CObjectBase::createObject(name);
         if (NULL != pObj)
         {
             pObj->die();

@@ -1,23 +1,23 @@
 //
-//  TFSpriteObject.cpp
+//  CSpriteObject.cpp
 //  TheForce
 //
 //  Created by Ray M on 13-3-5.
 //  Copyright (c) 2013年 Tencent. All rights reserved.
 //
 
-#include "TFSpriteObject.h"
+#include "CSpriteObject.h"
 
 
-DEFINE_DICTFUNC(TFSpriteObject, int, MaxLevel, 0);
-DEFINE_DICTFUNC_STR(TFSpriteObject, FileType);
-DEFINE_DICTFUNC_STR(TFSpriteObject, FileName);
-DEFINE_DICTFUNC_STR(TFSpriteObject, FileNameInFarm);
-DEFINE_DICTFUNC_STR(TFSpriteObject, InitState);
-DEFINE_DICTFUNC_STR(TFSpriteObject, FarmState);
-DEFINE_DICTFUNC_ARRAY(TFSpriteObject, States);
+DEFINE_DICTFUNC(CSpriteObject, int, MaxLevel, 0);
+DEFINE_DICTFUNC_STR(CSpriteObject, FileType);
+DEFINE_DICTFUNC_STR(CSpriteObject, FileName);
+DEFINE_DICTFUNC_STR(CSpriteObject, FileNameInFarm);
+DEFINE_DICTFUNC_STR(CSpriteObject, InitState);
+DEFINE_DICTFUNC_STR(CSpriteObject, FarmState);
+DEFINE_DICTFUNC_ARRAY(CSpriteObject, States);
 
-TFSpriteObject::TFSpriteObject()
+CSpriteObject::CSpriteObject()
 : pSprite_(NULL)
 , pCCBReader_(NULL)
 , m_pActionDelegate(NULL)
@@ -28,17 +28,17 @@ TFSpriteObject::TFSpriteObject()
 
 
 
-TFSpriteObject::~TFSpriteObject()
+CSpriteObject::~CSpriteObject()
 {
     clearThis();
 }
 
 
 
-bool TFSpriteObject::init(CCDictionary* pObjectDict)
+bool CSpriteObject::init(CCDictionary* pObjectDict)
 {
     do {
-        CC_BREAK_IF(!TFObject::init(pObjectDict));
+        CC_BREAK_IF(!CObjectBase::init(pObjectDict));
         CCString* fileType = getFileTypeFromDict();
         CC_BREAK_IF(NULL == fileType);
         CCString* fileName = getFileNameFromDict();
@@ -66,7 +66,7 @@ bool TFSpriteObject::init(CCDictionary* pObjectDict)
 }
 
 
-bool TFSpriteObject::setSpriteFromCcbi(const char* name)
+bool CSpriteObject::setSpriteFromCcbi(const char* name)
 {
     // Create auto-release node loader
     CCNodeLoaderLibrary* ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
@@ -90,7 +90,7 @@ bool TFSpriteObject::setSpriteFromCcbi(const char* name)
 }
 
 
-bool TFSpriteObject::setSprite(const char* name)
+bool CSpriteObject::setSprite(const char* name)
 {
     setInnerSprite(CCSprite::createWithSpriteFrameName(name));
     
@@ -103,9 +103,9 @@ bool TFSpriteObject::setSprite(const char* name)
 }
 
 
-//void TFSpriteObject::setContentSize(CCSize size)
+//void CSpriteObject::setContentSize(CCSize size)
 //{
-//    TFVisibleObject::setContentSize(size);
+//    CVisibleObject::setContentSize(size);
 //    
 //    if (m_pSprite)
 //    {
@@ -114,7 +114,7 @@ bool TFSpriteObject::setSprite(const char* name)
 //}
 
 
-//void TFSpriteObject::setCCBReaderRootContainerSize(CCSize size)
+//void CSpriteObject::setCCBReaderRootContainerSize(CCSize size)
 //{
 //    if (pCCBReader_)
 //    {
@@ -123,7 +123,7 @@ bool TFSpriteObject::setSprite(const char* name)
 //}
 
 
-void TFSpriteObject::setActionDelegate(TFSpriteActionDelegate* pDelegate)
+void CSpriteObject::setActionDelegate(CSpriteActionDelegate* pDelegate)
 {
     CC_SAFE_RELEASE(dynamic_cast<CCObject*>(m_pActionDelegate));
     m_pActionDelegate = pDelegate;
@@ -131,16 +131,16 @@ void TFSpriteObject::setActionDelegate(TFSpriteActionDelegate* pDelegate)
 }
 
 
-void TFSpriteObject::clearAll()
+void CSpriteObject::clearAll()
 {
-    TFObject::clearAll();
+    CObjectBase::clearAll();
  
     clearThis();
 }
 
 
 
-void TFSpriteObject::clearThis()
+void CSpriteObject::clearThis()
 {
     CCBReader* pCCBReader = getCCBReader();
     if (pCCBReader)
@@ -159,9 +159,9 @@ void TFSpriteObject::clearThis()
 
 
 
-bool TFSpriteObject::changeState(const string& s)
+bool CSpriteObject::changeState(const string& s, CComponentParameter* parameter, bool force)
 {
-    if (!TFVisibleObject::changeState(s))
+    if (!CVisibleObject::changeState(s, parameter, force))
     {
         return false;
     }
@@ -182,20 +182,20 @@ bool TFSpriteObject::changeState(const string& s)
 }
 
 
-void TFSpriteObject::endState()
+void CSpriteObject::endState()
 {
     this->changeState("");
 }
 
 
-CCNode* TFSpriteObject::getInnerSprite() const
+CCNode* CSpriteObject::getInnerSprite() const
 {
     return pSprite_;
 }
 
 
 
-void TFSpriteObject::setInnerSprite(CCSprite* var)
+void CSpriteObject::setInnerSprite(CCSprite* var)
 {
     if (pSprite_ != var)
     {
@@ -206,7 +206,7 @@ void TFSpriteObject::setInnerSprite(CCSprite* var)
 }
 
 
-//CCNode* TFSpriteObject::getCCBReaderRootNode() const
+//CCNode* CSpriteObject::getCCBReaderRootNode() const
 //{
 //    if (pCCBReader_)
 //    {
@@ -219,9 +219,9 @@ void TFSpriteObject::setInnerSprite(CCSprite* var)
 
 
 
-void TFSpriteObject::revive()
+void CSpriteObject::revive()
 {
-    TFVisibleObject::revive();
+    CVisibleObject::revive();
     
     CCString* initState = getInitStateFromDict();
     if (initState != NULL)
@@ -231,7 +231,7 @@ void TFSpriteObject::revive()
 
 }
 
-void TFSpriteObject::completedAnimationSequenceNamed(const char *name)
+void CSpriteObject::completedAnimationSequenceNamed(const char *name)
 {
     if (m_pActionDelegate)
     {
@@ -244,14 +244,14 @@ void TFSpriteObject::completedAnimationSequenceNamed(const char *name)
 
 
 
-void TFSpriteObject::changeStateOnAnimationLoopEnd(const string& s)
+void CSpriteObject::changeStateOnAnimationLoopEnd(const string& s)
 {
     nextState_ = s;
 }
 
 
 
-void TFSpriteObject::checkToChangeState()
+void CSpriteObject::checkToChangeState()
 {
     if (isAnimationLoopEnd_)
     {
@@ -266,9 +266,9 @@ void TFSpriteObject::checkToChangeState()
 
 
 
-void TFSpriteObject::update(float dt)
+void CSpriteObject::update(float dt)
 {
-    TFVisibleObject::update(dt);
+    CVisibleObject::update(dt);
     checkToChangeState();
 }
 

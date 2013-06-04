@@ -7,12 +7,15 @@
 //
 
 #include "TFMonster.h"
-#include "TFBulletBase.h"
+#include "CBulletBase.h"
 #include "TFHPBar.h"
 #include "TFBattleFieldLayer.h"
 
 #include "TFItemInGameMgr.h"
 #include "TFBattleFieldDataMgr.h"
+
+#include "TFPathManager.h"
+#include "TFPath.h"
 
 
 DEFINE_DICTFUNC(TFMonster, float, MaxHP, 0);
@@ -20,6 +23,8 @@ DEFINE_DICTFUNC(TFMonster, float, MaxHP, 0);
 
 TFMonster::TFMonster() : m_pHPBar(NULL)
 ,m_speed(180)
+,path_(NULL)
+,splineIdx_(0)
 {
     
 }
@@ -35,7 +40,7 @@ TFMonster::~TFMonster()
 
 void TFMonster::clearAll()
 {
-    TFRole::clearAll();
+    CRole::clearAll();
     clearThis();
 }
 
@@ -54,7 +59,7 @@ void TFMonster::clearThis()
 
 void TFMonster::checkCollision(TFCollisionProtocol* rb)
 {
-    TFBulletBase* pB = dynamic_cast<TFBulletBase*>(rb);
+    CBulletBase* pB = dynamic_cast<CBulletBase*>(rb);
     if (pB)     // Hit Bullet, Dead!
     {
         m_hitPoint -= pB->getDamage();
@@ -86,7 +91,7 @@ void TFMonster::checkCollision(TFCollisionProtocol* rb)
 
 bool TFMonster::init(CCDictionary* pObjectDict)
 {
-    if (!TFRole::init(pObjectDict))
+    if (!CRole::init(pObjectDict))
     {
         return false;
     }
@@ -94,14 +99,15 @@ bool TFMonster::init(CCDictionary* pObjectDict)
     m_maxHitPoint = getMaxHPFromDict();
     m_hitPoint = m_maxHitPoint;
     
-    if (!createHPBar())
-    {
-        return false;
-    }
-    
-    m_pHPBar->setPercentage(1.f);
-    m_pHPBar->setSpriteVisible(false);
+//    if (!createHPBar())
+//    {
+//        return false;
+//    }
+//    
+//    m_pHPBar->setPercentage(1.f);
+//    m_pHPBar->setSpriteVisible(false);
 
+    path_ = PATH_MANAGER->getPath();
     return true;
 }
 
@@ -109,20 +115,40 @@ bool TFMonster::init(CCDictionary* pObjectDict)
 
 void TFMonster::update(float dt)
 {    
-    TFRole::update(dt);
+    CRole::update(dt);
 
+    static float time = 0;
     if (!isDead())
     {
-        float offset = m_speed * dt;
-        CCPoint pt = getSpritePosition();
-        pt.y -= offset;
-        
-        setSpritePosition(pt);
+//        float offset = m_speed * dt;
+//        CCPoint pt = getSpritePosition();
+//        pt.y -= offset;
+//        
+//        setSpritePosition(pt);
 
-        if (pt.y < -50)
+//        if (pt.y < -50)
+//        {
+//            die();
+//        }
+        const float INTV = 0.01f;
+        time += dt;
+        if (time >= INTV)
         {
-            die();
+            time -= INTV;
+            if (path_)
+            {
+                CCArray* spline = path_->getSpline();
+                CCPoint* pt = dynamic_cast<CCPoint*>(spline->objectAtIndex(splineIdx_));
+                setSpritePosition(*pt);
+                splineIdx_++;
+                
+                if (splineIdx_ >= spline->count())
+                {
+                    splineIdx_ = 0;
+                }
+            }
         }
+
     }
     
     if (this->getCurrentState() == "Damage")
@@ -143,7 +169,7 @@ void TFMonster::update(float dt)
 
 void TFMonster::die()
 {
-    TFRole::die();
+    CRole::die();
 
     if (m_pHPBar != NULL)
     {
@@ -155,7 +181,7 @@ void TFMonster::die()
 
 void TFMonster::revive()
 {
-    TFRole::revive();
+    CRole::revive();
     m_hitPoint = m_maxHitPoint;
 }
 
@@ -185,7 +211,7 @@ void TFMonster::castItems()
 
 bool TFMonster::createHPBar()
 {
-    setHPBar(dynamic_cast<TFHPBar*>(TFObject::createObject("MonsterHPBar")));
+    setHPBar(dynamic_cast<TFHPBar*>(CObjectBase::createObject("MonsterHPBar")));
     if (NULL == getHPBar())
     {
         return false;

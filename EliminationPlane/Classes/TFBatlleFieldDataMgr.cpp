@@ -51,7 +51,7 @@ TFBattleFieldDataMgr::~TFBattleFieldDataMgr()
 
 void TFBattleFieldDataMgr::clearAll()
 {
-    TFObject::clearAll();
+    CObjectBase::clearAll();
     
     clearThis();
 }
@@ -286,7 +286,7 @@ bool TFBattleFieldDataMgr::createNearbyMonsters()
 
 void TFBattleFieldDataMgr::update(float dt)
 {
-    TFObject::update(dt);
+    CObjectBase::update(dt);
     
     m_gameTime += dt;
     

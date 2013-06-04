@@ -14,7 +14,7 @@
 #include <map>
 #include <string>
 
-class TFObject;
+class CObjectBase;
 
 using namespace std;
 
@@ -22,13 +22,13 @@ using namespace std;
 class TFObjectFactory : public TFSingleton<TFObjectFactory>
 {
 public:
-    typedef TFObject* (*FACTORY_CREATE_FUNC)();
+    typedef CObjectBase* (*FACTORY_CREATE_FUNC)();
 
     TFObjectFactory();
     virtual ~TFObjectFactory();
     
     bool Initialize();
-    TFObject* createInstance(const string& className);
+    CObjectBase* createInstance(const string& className);
     
 protected:
     bool registerClass(const string&  className, FACTORY_CREATE_FUNC func);
@@ -37,11 +37,11 @@ private:
     typedef map<string, FACTORY_CREATE_FUNC>::iterator MSCF_IT;
     typedef map<string, FACTORY_CREATE_FUNC>::const_iterator MSCF_CIT;
     
-    MSCF pFactoryTable;
+    MSCF FactoryTable_;
     
 };
 
-#define FACTORY_CREATE_FUNC(__type) static TFObject* create() \
+#define FACTORY_CREATE_FUNC(__type) static CObjectBase* create() \
 { \
     __type *pRet = new __type(); \
     if (pRet) \

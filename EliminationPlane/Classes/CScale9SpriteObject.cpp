@@ -1,17 +1,17 @@
 //
-//  TFScale9SpriteObject.cpp
+//  CScale9SpriteObject.cpp
 //  TheForce
 //
 //  Created by Ray M on 13-3-5.
 //  Copyright (c) 2013年 Tencent. All rights reserved.
 //
 
-#include "TFScale9SpriteObject.h"
+#include "CScale9SpriteObject.h"
 
-DEFINE_DICTFUNC_STR(TFScale9SpriteObject, FileName);
+DEFINE_DICTFUNC_STR(CScale9SpriteObject, FileName);
 
 
-TFScale9SpriteObject::TFScale9SpriteObject() :
+CScale9SpriteObject::CScale9SpriteObject() :
 m_pSprite(NULL)
 {
     
@@ -19,16 +19,16 @@ m_pSprite(NULL)
 
 
 
-TFScale9SpriteObject::~TFScale9SpriteObject()
+CScale9SpriteObject::~CScale9SpriteObject()
 {
     clearThis();
 }
 
 
 
-bool TFScale9SpriteObject::init(CCDictionary* pObjectDict)
+bool CScale9SpriteObject::init(CCDictionary* pObjectDict)
 {
-    if (!TFVisibleObject::init(pObjectDict))
+    if (!CVisibleObject::init(pObjectDict))
     {
         return false;
     }
@@ -48,9 +48,9 @@ bool TFScale9SpriteObject::init(CCDictionary* pObjectDict)
 
 
 
-bool TFScale9SpriteObject::init(const string& name)
+bool CScale9SpriteObject::init(const string& name)
 {
-    if (!TFVisibleObject::init(NULL))
+    if (!CVisibleObject::init(NULL))
     {
         return false;
     }
@@ -65,7 +65,7 @@ bool TFScale9SpriteObject::init(const string& name)
 
 
 
-bool TFScale9SpriteObject::createScale9Sprite(const string& name)
+bool CScale9SpriteObject::createScale9Sprite(const string& name)
 {
     string _name = name;
     string::size_type pos = name.find(".png", 0);
@@ -91,16 +91,16 @@ bool TFScale9SpriteObject::createScale9Sprite(const string& name)
 
 
 
-void TFScale9SpriteObject::clearAll()
+void CScale9SpriteObject::clearAll()
 {
-    TFVisibleObject::clearAll();
+    CVisibleObject::clearAll();
     
     clearThis();
 }
 
 
 
-void TFScale9SpriteObject::clearThis()
+void CScale9SpriteObject::clearThis()
 {
     if (m_pSprite)
     {
@@ -111,7 +111,7 @@ void TFScale9SpriteObject::clearThis()
 
 
 
-void TFScale9SpriteObject::setSpritePreferredSize(const CCSize& size)
+void CScale9SpriteObject::setSpritePreferredSize(const CCSize& size)
 {
     if (NULL != m_pSprite)
     {
@@ -121,7 +121,7 @@ void TFScale9SpriteObject::setSpritePreferredSize(const CCSize& size)
 
 
 
-CCNode* TFScale9SpriteObject::getInnerSprite() const
+CCNode* CScale9SpriteObject::getInnerSprite() const
 {
     return m_pSprite;
 }

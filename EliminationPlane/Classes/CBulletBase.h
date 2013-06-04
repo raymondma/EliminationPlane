@@ -1,5 +1,5 @@
 //
-//  TFBulletBase.h
+//  CBulletBase.h
 //  TheForce
 //
 //  Created by 马 俊 on 13-1-11.
@@ -13,19 +13,19 @@
 #include <string>
 #include <vector>
 
-#include "TFSpriteObject.h"
+#include "CSpriteObject.h"
 
 USING_NS_CC;
 using namespace std;
 
-class TFRole;
+class CRole;
 
-class TFBulletBase : public TFSpriteObject
+class CBulletBase : public CSpriteObject
 {
-    friend class TFObject;
+    friend class CObjectBase;
 public:
-    FACTORY_CREATE_FUNC(TFBulletBase);
-    virtual ~TFBulletBase();
+    FACTORY_CREATE_FUNC(CBulletBase);
+    virtual ~CBulletBase();
     
     virtual bool init(CCDictionary* pObjectDict);
     virtual void update(float dt);
@@ -35,13 +35,13 @@ public:
     virtual float getDamage();
 
 #ifdef DEBUG
-    virtual string whoAmI(){return "TFBulletBase";}
+    virtual string whoAmI(){return "CBulletBase";}
 #endif
     
     DECLARE_DICTFUNC(float, Damage);
     DECLARE_DICTFUNC(float, Speed);
 protected:
-    TFBulletBase();
+    CBulletBase();
     float m_speed;
 private:
 

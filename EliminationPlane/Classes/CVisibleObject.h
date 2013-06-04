@@ -1,5 +1,5 @@
 //
-//  TFVisibleObject.h
+//  CVisibleObject.h
 //  TheForce
 //
 //  Created by Ray M on 13-3-7.
@@ -9,12 +9,12 @@
 #ifndef __TheForce__TFVisibleObject__
 #define __TheForce__TFVisibleObject__
 
-#include "TFObject.h"
+#include "CObjectBase.h"
 
-class TFVisibleObject : public TFObject
+class CVisibleObject : public CObjectBase
 {
 public:
-    virtual ~TFVisibleObject();
+    virtual ~CVisibleObject();
     
     virtual CCRect getSpriteBoundingBox() const;
     virtual CCRect getSpriteBoundingBoxInWorldSpace();
@@ -52,7 +52,7 @@ public:
     
     DECLARE_DICTFUNC(int, CollisionGroup);
 protected:
-    TFVisibleObject();
+    CVisibleObject();
     void clearThis();
     
     virtual void updateBoundingBoxInWorldSpace();

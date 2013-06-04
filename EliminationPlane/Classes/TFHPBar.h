@@ -9,14 +9,14 @@
 #ifndef __TheForce__TFHPBar__
 #define __TheForce__TFHPBar__
 
-#include "TFSpriteObject.h"
-#include "TFScale9SpriteObject.h"
+#include "CSpriteObject.h"
+#include "CScale9SpriteObject.h"
 
 
-class TFHPBar : public TFSpriteObject
+class TFHPBar : public CSpriteObject
 {
-    friend class TFObject;
-    CC_SYNTHESIZE_RETAIN(TFScale9SpriteObject*, m_pBar, Bar);
+    friend class CObjectBase;
+    CC_SYNTHESIZE_RETAIN(CScale9SpriteObject*, m_pBar, Bar);
 public:
     FACTORY_CREATE_FUNC(TFHPBar);
     virtual ~TFHPBar();

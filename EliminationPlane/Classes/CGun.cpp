@@ -1,24 +1,24 @@
 //
-//  TFGun.cpp
+//  CGun.cpp
 //  TheForce
 //
 //  Created by 马 俊 on 13-2-3.
 //  Copyright (c) 2013年 Tencent. All rights reserved.
 //
 
-#include "TFGun.h"
-#include "TFBulletBase.h"
-#include "TFRole.h"
+#include "CGun.h"
+#include "CBulletBase.h"
+#include "CRole.h"
 #include "TFTexturesCache.h"
 
 
-DEFINE_DICTFUNC_STR(TFGun, BulletName);
-DEFINE_DICTFUNC(TFGun, int, MaxLevel, 0);
-DEFINE_DICTFUNC(TFGun, int, CacheNum, 0);
-DEFINE_DICTFUNC(TFGun, float, Frequency, 0.f);
+DEFINE_DICTFUNC_STR(CGun, BulletName);
+DEFINE_DICTFUNC(CGun, int, MaxLevel, 0);
+DEFINE_DICTFUNC(CGun, int, CacheNum, 0);
+DEFINE_DICTFUNC(CGun, float, Frequency, 0.f);
 
 
-TFGun::TFGun() : m_lastShootTime(0)
+CGun::CGun() : m_lastShootTime(0)
 ,m_isDoubleBullet(false)
 ,m_frequency(0.f)
 {
@@ -26,16 +26,16 @@ TFGun::TFGun() : m_lastShootTime(0)
 
 
 
-TFGun::~TFGun()
+CGun::~CGun()
 {
     clearThis();
 }
 
 
 
-bool TFGun::init(CCDictionary* pObjectDict)
+bool CGun::init(CCDictionary* pObjectDict)
 {
-    if (!TFObject::init(pObjectDict))
+    if (!CObjectBase::init(pObjectDict))
     {
         return false;
     }
@@ -63,14 +63,14 @@ bool TFGun::init(CCDictionary* pObjectDict)
 
 
 
-void TFGun::update(float dt)
+void CGun::update(float dt)
 {    
     CCObject* pObj;
     const CCArray* children = container_.getInUseArray();
     CCArray needToCheckin;
     CCARRAY_FOREACH(children, pObj)
     {
-        TFBulletBase* pBullet = dynamic_cast<TFBulletBase*>(pObj);
+        CBulletBase* pBullet = dynamic_cast<CBulletBase*>(pObj);
         if (pBullet != NULL && pBullet->isDead())
         {
             pBullet->removeSpriteFromParentAndCleanup(false);
@@ -84,14 +84,14 @@ void TFGun::update(float dt)
     
     CCARRAY_FOREACH(&needToCheckin, pObj)
     {
-        container_.checkinElement(static_cast<TFObject*>(pObj));
+        container_.checkinElement(static_cast<CObjectBase*>(pObj));
     }
     needToCheckin.removeAllObjects();
 }
 
 
 
-void TFGun::setOwner(TFRole* role)
+void CGun::setOwner(CRole* role)
 {
     CCAssert(role, "role is invalid.");
     
@@ -103,7 +103,7 @@ void TFGun::setOwner(TFRole* role)
 
 
 
-void TFGun::shoot(float dt)
+void CGun::shoot(float dt)
 {
     m_lastShootTime += dt;
 
@@ -129,7 +129,7 @@ void TFGun::shoot(float dt)
             
             for (int i=0; i<2; ++i)
             {
-                TFBulletBase* pBullet = dynamic_cast<TFBulletBase*>(container_.checkoutElement());
+                CBulletBase* pBullet = dynamic_cast<CBulletBase*>(container_.checkoutElement());
                 if (pBullet)
                 {
                     pBullet->revive();
@@ -146,7 +146,7 @@ void TFGun::shoot(float dt)
             m_lastShootTime -= m_frequency;
             
 
-            TFBulletBase* pBullet = dynamic_cast<TFBulletBase*>(container_.checkoutElement());
+            CBulletBase* pBullet = dynamic_cast<CBulletBase*>(container_.checkoutElement());
             if (pBullet)
             {
                 pBullet->revive();
@@ -160,21 +160,21 @@ void TFGun::shoot(float dt)
 
 
 
-void TFGun::clearAll()
+void CGun::clearAll()
 {
-    TFObject::clearAll();
+    CObjectBase::clearAll();
     clearThis();
 }
 
 
 
-void TFGun::clearThis()
+void CGun::clearThis()
 {
     
 }
 
 
-bool TFGun::addBulletRow()
+bool CGun::addBulletRow()
 {
     m_isDoubleBullet = true;
     return true;
@@ -182,7 +182,7 @@ bool TFGun::addBulletRow()
 
 
 
-bool TFGun::removeBulletRow()
+bool CGun::removeBulletRow()
 {
     m_isDoubleBullet = false;
     return true;
@@ -190,14 +190,14 @@ bool TFGun::removeBulletRow()
 
 
 
-GameArts TFGun::getBatchNodeName()
+GameArts CGun::getBatchNodeName()
 {
     return GA_BULLETS;
 }
 
 
 
-bool TFGun::changeBullet(const string& name)
+bool CGun::changeBullet(const string& name)
 {
     container_.clear();
     if (!container_.initCache(name, getCacheNumFromDict()))

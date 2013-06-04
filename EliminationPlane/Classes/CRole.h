@@ -1,5 +1,5 @@
 //
-//  TFRole
+//  CRole
 //  TheForce
 //
 //  Created by 马 俊 on 13-1-11.
@@ -10,20 +10,20 @@
 #define __TheForce__TFRole__
 
 #include "cocos2d.h"
-#include "TFSpriteObject.h"
-#include "TFGun.h"
+#include "CSpriteObject.h"
+#include "CGun.h"
 
 
 USING_NS_CC;
 
-class TFRole : public TFSpriteObject
+class CRole : public CSpriteObject
 {
-    friend class TFObject;
-    CC_SYNTHESIZE_RETAIN(TFGun*, m_pGun, Gun);
+    friend class CObjectBase;
+    CC_SYNTHESIZE_RETAIN(CGun*, m_pGun, Gun);
 public:
-    FACTORY_CREATE_FUNC(TFRole);
+    FACTORY_CREATE_FUNC(CRole);
     
-	virtual ~TFRole();
+	virtual ~CRole();
 
     virtual bool init(CCDictionary* pObjectDict);
 
@@ -37,7 +37,7 @@ public:
     
     DECLARE_DICTFUNC(CCDictionary*, Gun);
 protected:
-	TFRole();
+	CRole();
     void clearThis();
     
     void updateShootPointInWorldSpace();

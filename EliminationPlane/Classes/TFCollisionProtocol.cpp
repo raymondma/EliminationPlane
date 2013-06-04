@@ -8,6 +8,7 @@
 
 #include "TFCollisionProtocol.h"
 #include "TFCollisionMgr.h"
+#include "CObjectBase.h"
 
 void TFCollisionProtocol::turnOnCollision()
 {
@@ -52,5 +53,27 @@ bool TFCollisionProtocol::isNeedCheckCollision()
 
 void TFCollisionProtocol::checkCollision(TFCollisionProtocol* rb)
 {
-    
+    GBCollisionType type = rb->getCollisionType();
+    MICH_IT it = m_handlers.find(type);
+    if (it != m_handlers.end())
+    {
+        CObjectBase* _this = dynamic_cast<CObjectBase*>(this);
+        COLLISION_HANDLER handler = (*it).second;
+        (_this->*handler)(rb);
+    }
 }
+
+
+
+GBCollisionType TFCollisionProtocol::getCollisionType()
+{
+    return CT_INVALID;
+}
+
+
+
+void TFCollisionProtocol::addCollisionHandler(GBCollisionType type, COLLISION_HANDLER handler)
+{
+    m_handlers[type] = handler;
+}
+

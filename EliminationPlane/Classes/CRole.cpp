@@ -1,37 +1,37 @@
 //
-//  TFRole.cpp
+//  CRole.cpp
 //  TheForce
 //
 //  Created by 马 俊 on 13-1-11.
 //
 //
-#include "TFRole.h"
-#include "TFBulletBase.h"
+#include "CRole.h"
+#include "CBulletBase.h"
 #include "TFGameObjectManager.h"
 
 
-DEFINE_DICTFUNC_DICTIONARY(TFRole, Gun);
+DEFINE_DICTFUNC_DICTIONARY(CRole, Gun);
 
 
 
 
-TFRole::TFRole() : m_pGun(NULL)
+CRole::CRole() : m_pGun(NULL)
 {
 
 }
 
 
 
-TFRole::~TFRole()
+CRole::~CRole()
 {
     clearThis();
 }
 
 
 
-bool TFRole::init(CCDictionary* pObjectDict)
+bool CRole::init(CCDictionary* pObjectDict)
 {
-    if (!TFSpriteObject::init(pObjectDict))
+    if (!CSpriteObject::init(pObjectDict))
     {
         return false;
     }
@@ -66,7 +66,7 @@ bool TFRole::init(CCDictionary* pObjectDict)
 
 
 
-CCPoint TFRole::getShootPoint()
+CCPoint CRole::getShootPoint()
 {
 //    return ccpAdd(getSpritePosition(), m_shootPoint);
     return m_shootPointInWorldSpace;
@@ -74,9 +74,9 @@ CCPoint TFRole::getShootPoint()
 
 
 
-void TFRole::update(float dt)
+void CRole::update(float dt)
 {
-    TFSpriteObject::update(dt);
+    CSpriteObject::update(dt);
     updateShootPointInWorldSpace();
     
     if (m_pGun)
@@ -89,16 +89,16 @@ void TFRole::update(float dt)
 
 
 
-void TFRole::clearAll()
+void CRole::clearAll()
 {
-    TFSpriteObject::clearAll();
+    CSpriteObject::clearAll();
     
     clearThis();
 }
 
 
 
-void TFRole::clearThis()
+void CRole::clearThis()
 {
     if (m_pGun)
     {
@@ -109,7 +109,7 @@ void TFRole::clearThis()
 
 
 
-bool TFRole::createGun(const string& name)
+bool CRole::createGun(const string& name)
 {
     if (NULL != getGun())
     {
@@ -118,7 +118,7 @@ bool TFRole::createGun(const string& name)
         setGun(NULL);
     }
     
-    setGun(dynamic_cast<TFGun*>(TFObject::createObject(name)));
+    setGun(dynamic_cast<CGun*>(CObjectBase::createObject(name)));
     if (NULL == getGun())
     {
         return false;
@@ -131,9 +131,9 @@ bool TFRole::createGun(const string& name)
 
 
 
-bool TFRole::attachSpriteTo(CCNode* parent, int zOrder, int tag)
+bool CRole::attachSpriteTo(CCNode* parent, int zOrder, int tag)
 {
-    if (!TFSpriteObject::attachSpriteTo(parent, zOrder, tag))
+    if (!CSpriteObject::attachSpriteTo(parent, zOrder, tag))
     {
         return false;
     }
@@ -147,7 +147,7 @@ bool TFRole::attachSpriteTo(CCNode* parent, int zOrder, int tag)
 
 
 
-bool TFRole::changeBullet(const string& name)
+bool CRole::changeBullet(const string& name)
 {
     if (NULL == m_pGun)
     {
@@ -159,7 +159,7 @@ bool TFRole::changeBullet(const string& name)
 
 
 
-void TFRole::updateShootPointInWorldSpace()
+void CRole::updateShootPointInWorldSpace()
 {
     CCNode* pSpr = getInnerSprite();
     if (NULL != pSpr && NULL != pSpr->getParent())

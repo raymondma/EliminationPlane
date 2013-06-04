@@ -1,5 +1,5 @@
 //
-//  TFSpriteObject.h
+//  CSpriteObject.h
 //  TheForce
 //
 //  Created by Ray M on 13-3-5.
@@ -9,14 +9,15 @@
 #ifndef __TheForce__TFSpriteObject__
 #define __TheForce__TFSpriteObject__
 
-#include "TFVisibleObject.h"
-#include "TFSpriteActionDelegate.h"
+#include "CVisibleObject.h"
+#include "CSpriteActionDelegate.h"
 
-class TFSpriteObject : public TFVisibleObject, public CCBAnimationManagerDelegate
+class CSpriteObject : public CVisibleObject, public CCBAnimationManagerDelegate
 {
     CC_SYNTHESIZE_RETAIN(CCBReader*, pCCBReader_, CCBReader);
 public:
-	virtual ~TFSpriteObject();
+    FACTORY_CREATE_FUNC(CSpriteObject);
+	virtual ~CSpriteObject();
 	
 	virtual bool init(CCDictionary* pObjectDict);
     virtual void update(float dt);
@@ -26,11 +27,11 @@ public:
     virtual void revive();
     
     // Warning:DO NOT call changeState in the delegate function!
-    virtual void setActionDelegate(TFSpriteActionDelegate* pDelegate);    
+    virtual void setActionDelegate(CSpriteActionDelegate* pDelegate);    
 
     virtual CCNode* getInnerSprite() const;
 
-    virtual bool changeState(const string& s);
+    virtual bool changeState(const string& s, CComponentParameter* parameter = NULL, bool force = false);
     virtual void changeStateOnAnimationLoopEnd(const string& s);
     virtual void endState();
 
@@ -46,7 +47,7 @@ public:
     DECLARE_DICTFUNC(CCArray*, States);
     
 protected:
-    TFSpriteObject();
+    CSpriteObject();
     void clearThis();
     
     virtual void setInnerSprite(CCSprite* var);
@@ -56,7 +57,7 @@ protected:
     bool setSpriteFromCcbi(const char* name);
     bool setSprite(const char* name);
     
-    TFSpriteActionDelegate* m_pActionDelegate;
+    CSpriteActionDelegate* m_pActionDelegate;
 private:
     CCSprite* pSprite_;
     bool isAnimationLoopEnd_;

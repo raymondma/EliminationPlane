@@ -1,22 +1,22 @@
 //
-//  TFBulletBase.cpp
+//  CBulletBase.cpp
 //  TheForce
 //
 //  Created by 马 俊 on 13-1-11.
 //
 //
 
-#include "TFBulletBase.h"
-#include "TFRole.h"
+#include "CBulletBase.h"
+#include "CRole.h"
 #include "TFMonster.h"
 
 #include "TFPListReaderHelper.h"
 #include "Common.h"
 
-DEFINE_DICTFUNC(TFBulletBase, float, Damage, 0.f);
-DEFINE_DICTFUNC(TFBulletBase, float, Speed, 0.f);
+DEFINE_DICTFUNC(CBulletBase, float, Damage, 0.f);
+DEFINE_DICTFUNC(CBulletBase, float, Speed, 0.f);
 
-TFBulletBase::TFBulletBase() :
+CBulletBase::CBulletBase() :
 m_speed(0.f)
 {
     
@@ -24,16 +24,16 @@ m_speed(0.f)
 
 
 
-TFBulletBase::~TFBulletBase()
+CBulletBase::~CBulletBase()
 {
     
 }
 
 
 
-bool TFBulletBase::init(CCDictionary* pObjectDict)
+bool CBulletBase::init(CCDictionary* pObjectDict)
 {
-    if (!TFSpriteObject::init(pObjectDict))
+    if (!CSpriteObject::init(pObjectDict))
     {
         return false;
     }
@@ -50,7 +50,7 @@ bool TFBulletBase::init(CCDictionary* pObjectDict)
 
 
 
-void TFBulletBase::checkCollision(TFCollisionProtocol* rb)
+void CBulletBase::checkCollision(TFCollisionProtocol* rb)
 {
     TFMonster* pMonster = dynamic_cast<TFMonster*>(rb);
     if (pMonster)
@@ -61,9 +61,9 @@ void TFBulletBase::checkCollision(TFCollisionProtocol* rb)
 
 
 
-void TFBulletBase::update(float dt)
+void CBulletBase::update(float dt)
 {
-    TFSpriteObject::update(dt);
+    CSpriteObject::update(dt);
     
     if (!isDead())
     {
@@ -82,7 +82,7 @@ void TFBulletBase::update(float dt)
 
 
 
-float TFBulletBase::getDamage()
+float CBulletBase::getDamage()
 {
     return getDamageFromDict();
 }

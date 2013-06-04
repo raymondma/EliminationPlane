@@ -8,14 +8,14 @@
 		<string>Plane0</string>
 		<key>CateName</key>
 		<string>EPPlane</string>
-		<key>CollisionGroup</key>
-		<integer>1</integer>
+		<key>InitState</key>
+		<string>Fly</string>
 		<key>FileType</key>
 		<string>ccbi</string>
 		<key>FileName</key>
 		<string>plane0</string>
-		<key>InitState</key>
-		<string>Fly</string>
+		<key>CollisionGroup</key>
+		<integer>1</integer>
 		<key>Gun</key>
 		<dict>
 			<key>GunName</key>
@@ -24,37 +24,63 @@
 			<string>{0, 17}</string>
 		</dict>
 	</dict>
-	<key>GunType0</key>
+	<key>Land</key>
 	<dict>
 		<key>Name</key>
-		<string>GunType</string>
+		<string>Land</string>
 		<key>CateName</key>
-		<string>TFGun</string>
-		<key>BulletName</key>
-		<string>BulletType0</string>
-		<key>CacheNum</key>
-		<integer>1</integer>
-		<key>Frequency</key>
-		<real>0.05</real>
+		<string>EPLand</string>
+		<key>FileType</key>
+		<string>ccbi</string>
+		<key>FileName</key>
+		<string>land</string>
+		<key>CollisionGroup</key>
+		<string>1</string>
 	</dict>
 	<key>BulletType0</key>
 	<dict>
 		<key>Name</key>
 		<string>BulletType0</string>
 		<key>CateName</key>
-		<string>TFBulletBase</string>
+		<string>CBulletBase</string>
+		<key>Damage</key>
+		<integer>10</integer>
+		<key>FileType</key>
+		<string>ccbi</string>
 		<key>CollisionGroup</key>
 		<string>1</string>
+		<key>Speed</key>
+		<integer>240</integer>
+		<key>FileName</key>
+		<string>bullet0</string>
+		<key>InitState</key>
+		<string>Ready</string>
+	</dict>
+	<key>GunType0</key>
+	<dict>
+		<key>Name</key>
+		<string>GunType</string>
+		<key>CateName</key>
+		<string>CGun</string>
+		<key>CacheNum</key>
+		<integer>100</integer>
+		<key>Frequency</key>
+		<real>0.05</real>
+		<key>BulletName</key>
+		<string>BulletType0</string>
+	</dict>
+	<key>M1</key>
+	<dict>
+		<key>Name</key>
+		<string>M1</string>
+		<key>CateName</key>
+		<string>TFMonster</string>
 		<key>FileType</key>
 		<string>ccbi</string>
 		<key>FileName</key>
-		<string>bullet0</string>
-		<key>Damage</key>
-		<integer>10</integer>
-		<key>Speed</key>
-		<integer>240</integer>
-		<key>InitState</key>
-		<string>Ready</string>
+		<string>m1</string>
+		<key>CollisionGroup</key>
+		<string>1</string>
 	</dict>
 </dict>
 </plist>

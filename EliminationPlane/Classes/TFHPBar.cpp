@@ -45,14 +45,14 @@ void TFHPBar::setPercentage(float percentage)
 
 bool TFHPBar::init(CCDictionary* pObjectDict)
 {
-    if (!TFSpriteObject::init(pObjectDict))
+    if (!CSpriteObject::init(pObjectDict))
     {
         return false;
     }
     
     CCString* barFileName = getBarFileNameFromDict();
     
-    setBar(dynamic_cast<TFScale9SpriteObject*>(OBJECT_FACTORY->createInstance("TFScale9SpriteObject")));
+    setBar(dynamic_cast<CScale9SpriteObject*>(OBJECT_FACTORY->createInstance("CScale9SpriteObject")));
     if (!getBar() || !m_pBar->init(barFileName->getCString()))
     {
         return false;
@@ -72,7 +72,7 @@ bool TFHPBar::init(CCDictionary* pObjectDict)
 
 void TFHPBar::clearAll()
 {
-    TFSpriteObject::clearAll();
+    CSpriteObject::clearAll();
     clearThis();
 }
 
@@ -116,7 +116,7 @@ void TFHPBar::updateBar()
 
 void TFHPBar::update(float dt)
 {
-    TFSpriteObject::update(dt);
+    CSpriteObject::update(dt);
     
     CCPoint pt(1, -3);
     // rewrite later!!
@@ -131,5 +131,5 @@ void TFHPBar::setSpriteVisible(bool visible)
 {
     this->setVisible(visible);
     
-    TFSpriteObject::setSpriteVisible(visible);
+    CSpriteObject::setSpriteVisible(visible);
 }

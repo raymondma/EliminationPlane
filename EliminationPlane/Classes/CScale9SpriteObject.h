@@ -1,5 +1,5 @@
 //
-//  TFScale9SpriteObject.h
+//  CScale9SpriteObject.h
 //  TheForce
 //
 //  Created by Ray M on 13-3-5.
@@ -9,14 +9,14 @@
 #ifndef __TheForce__TFScale9SpriteObject__
 #define __TheForce__TFScale9SpriteObject__
 
-#include "TFVisibleObject.h"
+#include "CVisibleObject.h"
 
-class TFScale9SpriteObject : public TFVisibleObject
+class CScale9SpriteObject : public CVisibleObject
 {
-    friend class TFObject;
+    friend class CObjectBase;
 public:
-    FACTORY_CREATE_FUNC(TFScale9SpriteObject);
-	virtual ~TFScale9SpriteObject();
+    FACTORY_CREATE_FUNC(CScale9SpriteObject);
+	virtual ~CScale9SpriteObject();
 	
 	virtual bool init(CCDictionary* pObjectDict);
     virtual bool init(const string& name);
@@ -28,7 +28,7 @@ public:
     
     DECLARE_DICTFUNC(CCString*, FileName);
 protected:
-    TFScale9SpriteObject();
+    CScale9SpriteObject();
     void clearThis();
     
     virtual CCNode* getInnerSprite() const;

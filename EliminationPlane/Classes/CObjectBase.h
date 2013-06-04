@@ -1,5 +1,5 @@
 //
-//  TFObject.h
+//  CObjectBase.h
 //  TheForce
 //
 //  Created by Ray M on 13-3-5.
@@ -15,7 +15,7 @@
 #include <string>
 
 #include "TFObjectFactory.h"
-#include "TFStateBase.h"
+#include "CState.h"
 #include "TFCollisionProtocol.h"
 
 #include "TFPListReaderHelper.h"
@@ -26,14 +26,14 @@ USING_NS_CC_EXT;
 
 class TFRoleData;
 
-class TFObject : public CCNode, public TFStateBase, public TFCollisionProtocol
+class CObjectBase : public CCNode, public CState, public TFCollisionProtocol
 {
     CC_SYNTHESIZE_RETAIN(CCDictionary*, pObjectDictionary_, ObjectDictionary);
 public:
     // Param: name      the name in GameObject.plist
-    static TFObject* createObject(const string& name);
+    static CObjectBase* createObject(const string& name);
 
-	virtual ~TFObject();
+	virtual ~CObjectBase();
 	
     //
 	virtual bool init(CCDictionary* pObjectDict);
@@ -56,10 +56,10 @@ public:
     
     
 #ifdef DEBUG
-    virtual string whoAmI(){return "TFObject";}
+    virtual string whoAmI(){return "CObjectBase";}
 #endif
 protected:
-    TFObject();
+    CObjectBase();
     void clearThis();
     
     bool m_isDead;

@@ -37,7 +37,7 @@ void TFItemInGame::checkCollision(TFCollisionProtocol* rb)
 
 void TFItemInGame::update(float dt)
 {
-    TFSpriteObject::update(dt);
+    CSpriteObject::update(dt);
     
     if (!isDead())
     {
@@ -142,7 +142,7 @@ void TFItemInGame::onMagnetActive(CCObject* pObject)
 
 bool TFItemInGame::init(CCDictionary* pObjectDict)
 {
-    if (!TFSpriteObject::init(pObjectDict))
+    if (!CSpriteObject::init(pObjectDict))
     {
         return false;
     }
@@ -159,7 +159,7 @@ bool TFItemInGame::init(CCDictionary* pObjectDict)
 
 void TFItemInGame::clearAll()
 {
-    TFSpriteObject::clearAll();
+    CSpriteObject::clearAll();
     clearThis();
 }
 
@@ -175,7 +175,7 @@ void TFItemInGame::clearThis()
 
 void TFItemInGame::die()
 {
-    TFSpriteObject::die();
+    CSpriteObject::die();
     
     m_isInMagneticField = false;
     
@@ -186,7 +186,7 @@ void TFItemInGame::die()
 
 void TFItemInGame::revive()
 {
-    TFSpriteObject::revive();
+    CSpriteObject::revive();
     
     initListener();
 }
@@ -195,7 +195,7 @@ void TFItemInGame::revive()
 
 void TFItemInGame::completedAnimationSequenceNamed(const char *name)
 {
-    TFSpriteObject::completedAnimationSequenceNamed(name);
+    CSpriteObject::completedAnimationSequenceNamed(name);
 }
 
 

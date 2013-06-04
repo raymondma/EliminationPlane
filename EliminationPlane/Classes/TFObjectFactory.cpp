@@ -7,15 +7,17 @@
 //
 
 #include "TFObjectFactory.h"
-#include "TFObject.h"
-#include "TFRole.h"
-#include "TFBulletBase.h"
+#include "CObjectBase.h"
+#include "CRole.h"
+#include "CBulletBase.h"
 #include "TFMonster.h"
 #include "TFItemInGame.h"
 #include "TFHPBar.h"
-#include "TFGun.h"
-#include "TFScale9SpriteObject.h"
+#include "CGun.h"
+#include "CScale9SpriteObject.h"
+#include "CSpriteObject.h"
 #include "EPPlane.h"
+#include "EPLand.h"
 
 #define REGISTER_CLASS(__classname) if (!registerClass(#__classname, FACTOR_SEL(__classname::create))){return false;}
 #define FACTOR_SEL(__selector) (FACTORY_CREATE_FUNC)(&__selector)
@@ -38,14 +40,16 @@ TFObjectFactory::~TFObjectFactory()
 
 bool TFObjectFactory::Initialize()
 {
-    REGISTER_CLASS(TFRole);
-    REGISTER_CLASS(TFBulletBase);
+    REGISTER_CLASS(CRole);
+    REGISTER_CLASS(CBulletBase);
     REGISTER_CLASS(TFMonster);
     REGISTER_CLASS(TFItemInGame);
     REGISTER_CLASS(TFHPBar);
-    REGISTER_CLASS(TFGun);
-    REGISTER_CLASS(TFScale9SpriteObject);
+    REGISTER_CLASS(CGun);
+    REGISTER_CLASS(CSpriteObject);
+    REGISTER_CLASS(CScale9SpriteObject);
     REGISTER_CLASS(EPPlane);
+    REGISTER_CLASS(EPLand);
     return true;
 }
 
@@ -58,21 +62,21 @@ bool TFObjectFactory::registerClass(const string&  className, FACTORY_CREATE_FUN
         return false;
     }
     
-    MSCF_CIT it = pFactoryTable.find(className);
-    if (it != pFactoryTable.end())
+    MSCF_CIT it = FactoryTable_.find(className);
+    if (it != FactoryTable_.end())
     {
         return false;
     }
-    pFactoryTable[className] = func;
+    FactoryTable_[className] = func;
     return true;
 }
 
 
 
-TFObject* TFObjectFactory::createInstance(const string& className)
+CObjectBase* TFObjectFactory::createInstance(const string& className)
 {
-    MSCF_IT it = pFactoryTable.find(className);
-    if (it == pFactoryTable.end())
+    MSCF_IT it = FactoryTable_.find(className);
+    if (it == FactoryTable_.end())
     {
         return NULL;
     }

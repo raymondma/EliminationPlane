@@ -9,7 +9,7 @@
 #ifndef __TheForce__TFBatchNodeObject__
 #define __TheForce__TFBatchNodeObject__
 
-#include "TFObject.h"
+#include "CObjectBase.h"
 #include "TFTexturesCache.h"
 
 class TFBatchNodeObject

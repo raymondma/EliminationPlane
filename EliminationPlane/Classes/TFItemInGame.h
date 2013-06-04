@@ -9,11 +9,11 @@
 #ifndef __TheForce__TFItemInGame__
 #define __TheForce__TFItemInGame__
 
-#include "TFSpriteObject.h"
+#include "CSpriteObject.h"
 
-class TFItemInGame : public TFSpriteObject
+class TFItemInGame : public CSpriteObject
 {
-    friend class TFObject;
+    friend class CObjectBase;
 public:
     FACTORY_CREATE_FUNC(TFItemInGame);
     virtual ~TFItemInGame();

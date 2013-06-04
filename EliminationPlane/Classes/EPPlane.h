@@ -9,12 +9,11 @@
 #ifndef __EliminationPlane__EPPlane__
 #define __EliminationPlane__EPPlane__
 
-#include "TFRole.h"
+#include "CRole.h"
 #include "TFObjectFactory.h"
 
-class EPPlane : public TFRole
+class EPPlane : public CRole
 {
-    friend class TFObject;
 public:
     FACTORY_CREATE_FUNC(EPPlane);
     
@@ -22,6 +21,13 @@ public:
     
     virtual void update(float dt);
     virtual void clearAll();
+    
+    virtual void doubleGun(float duration);
+    virtual void cancelDoubleGun();
+
+    virtual void MoveDelta(float x);
+    
+    virtual void checkCollision(TFCollisionProtocol* rb);
     
     virtual void triggerSkill();
 #ifdef DEBUG
@@ -31,6 +37,14 @@ public:
 protected:
     EPPlane();
     
+    void clearThis();
+    void updateDoubleGun(float dt);
+    
+    bool m_isDoubleGun;
+    float m_doubleGunStartTime;
+    float m_doubleGunDuration;
+    
+private:
 };
 
 #endif /* defined(__EliminationPlane__EPPlane__) */

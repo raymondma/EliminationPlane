@@ -7,6 +7,7 @@
 //
 
 #include "TFGameObjectManager.h"
+#include "CCDictionarySaver.h"
 
 IMPLEMENT_SINGLETON(TFGameObjectManager);
 
@@ -49,7 +50,7 @@ bool TFGameObjectManager::init()
         __CCLOGWITHFUNCTION("file can't be loaded: %s", fcp);
         return false;
     }
-    
+
     return true;
 }
 
