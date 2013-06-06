@@ -120,6 +120,8 @@ void CObjectBase::update(float dt)
     {
         pObj->update(dt);
     }
+    
+    updateComponents(dt);
 }
 
 

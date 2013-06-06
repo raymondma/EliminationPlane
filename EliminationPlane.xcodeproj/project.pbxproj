@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5416198C175F74B9005091E5 /* CPathMoveComp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5416198A175F74B9005091E5 /* CPathMoveComp.cpp */; };
 		5416ECE8170E8C8F004A5EF7 /* land.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 5416ECE7170E8C8F004A5EF7 /* land.ccbi */; };
 		5416ECEB170E8D5C004A5EF7 /* EPLand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5416ECE9170E8D5C004A5EF7 /* EPLand.cpp */; };
 		542A330A17092AB500534A51 /* EPPlane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 542A330817092AB500534A51 /* EPPlane.cpp */; };
-		5432D35B175CB4960097FE6E /* TFPath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5432D359175CB4960097FE6E /* TFPath.cpp */; };
+		5432D35B175CB4960097FE6E /* CPath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5432D359175CB4960097FE6E /* CPath.cpp */; };
 		5432D35D175CE5660097FE6E /* m1.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 5432D35C175CE5660097FE6E /* m1.ccbi */; };
 		54543F6B170C4AFB0067F471 /* plane0.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 54543F6A170C4AFB0067F471 /* plane0.ccbi */; };
 		54543F6D170C4BB50067F471 /* bullet0.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 54543F6C170C4BB50067F471 /* bullet0.ccbi */; };
@@ -211,8 +212,7 @@
 		5462A518170828A300C285A2 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5462A517170828A300C285A2 /* AppDelegate.cpp */; };
 		5466C057175D829E009C3B84 /* CComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5466C053175D829E009C3B84 /* CComponent.cpp */; };
 		5466C058175D829E009C3B84 /* CComponentParameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5466C055175D829E009C3B84 /* CComponentParameter.cpp */; };
-		549BA6C2175C267300DA4288 /* test.pm in Resources */ = {isa = PBXBuildFile; fileRef = 549BA6C1175C267300DA4288 /* test.pm */; };
-		549BA6C5175C274900DA4288 /* TFPathManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 549BA6C3175C274900DA4288 /* TFPathManager.cpp */; };
+		549BA6C5175C274900DA4288 /* CPathManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 549BA6C3175C274900DA4288 /* CPathManager.cpp */; };
 		54BD8AD317084D1700F7663B /* ga_actors-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54BD8ACF17084D1700F7663B /* ga_actors-hd.plist */; };
 		54BD8AD417084D1700F7663B /* ga_actors-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 54BD8AD017084D1700F7663B /* ga_actors-hd.pvr.ccz */; };
 		54BD8AD517084D1700F7663B /* ga_actors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54BD8AD117084D1700F7663B /* ga_actors.plist */; };
@@ -225,6 +225,7 @@
 		54BD8AE417084EDF00F7663B /* ga_scenes-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 54BD8ADC17084EDF00F7663B /* ga_scenes-hd.pvr.ccz */; };
 		54BD8AE517084EDF00F7663B /* ga_scenes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54BD8ADD17084EDF00F7663B /* ga_scenes.plist */; };
 		54BD8AE617084EDF00F7663B /* ga_scenes.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 54BD8ADE17084EDF00F7663B /* ga_scenes.pvr.ccz */; };
+		54C7D97C1760278100C78F74 /* game_path.pmp in Resources */ = {isa = PBXBuildFile; fileRef = 54C7D97B1760278100C78F74 /* game_path.pmp */; };
 		54D5A5351708360900485E62 /* TFBattleFieldLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5331708360900485E62 /* TFBattleFieldLayer.cpp */; };
 		54D5A54B1708371500485E62 /* CBulletBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5371708371500485E62 /* CBulletBase.cpp */; };
 		54D5A54C1708371500485E62 /* TFCollisionProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D5A5391708371500485E62 /* TFCollisionProtocol.cpp */; };
@@ -260,13 +261,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5416198A175F74B9005091E5 /* CPathMoveComp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CPathMoveComp.cpp; path = Classes/CPathMoveComp.cpp; sourceTree = "<group>"; };
+		5416198B175F74B9005091E5 /* CPathMoveComp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPathMoveComp.h; path = Classes/CPathMoveComp.h; sourceTree = "<group>"; };
 		5416ECE7170E8C8F004A5EF7 /* land.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = land.ccbi; path = Resources/land.ccbi; sourceTree = "<group>"; };
 		5416ECE9170E8D5C004A5EF7 /* EPLand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EPLand.cpp; path = Classes/EPLand.cpp; sourceTree = "<group>"; };
 		5416ECEA170E8D5C004A5EF7 /* EPLand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPLand.h; path = Classes/EPLand.h; sourceTree = "<group>"; };
 		542A330817092AB500534A51 /* EPPlane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EPPlane.cpp; path = Classes/EPPlane.cpp; sourceTree = "<group>"; };
 		542A330917092AB500534A51 /* EPPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPPlane.h; path = Classes/EPPlane.h; sourceTree = "<group>"; };
-		5432D359175CB4960097FE6E /* TFPath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFPath.cpp; path = Classes/TFPath.cpp; sourceTree = "<group>"; };
-		5432D35A175CB4960097FE6E /* TFPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFPath.h; path = Classes/TFPath.h; sourceTree = "<group>"; };
+		5432D359175CB4960097FE6E /* CPath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CPath.cpp; path = Classes/CPath.cpp; sourceTree = "<group>"; };
+		5432D35A175CB4960097FE6E /* CPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPath.h; path = Classes/CPath.h; sourceTree = "<group>"; };
 		5432D35C175CE5660097FE6E /* m1.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = m1.ccbi; path = Resources/m1.ccbi; sourceTree = "<group>"; };
 		54543F6A170C4AFB0067F471 /* plane0.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = plane0.ccbi; path = Resources/plane0.ccbi; sourceTree = "<group>"; };
 		54543F6C170C4BB50067F471 /* bullet0.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = bullet0.ccbi; path = Resources/bullet0.ccbi; sourceTree = "<group>"; };
@@ -702,9 +705,8 @@
 		5466C054175D829E009C3B84 /* CComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CComponent.h; path = Classes/CComponent.h; sourceTree = "<group>"; };
 		5466C055175D829E009C3B84 /* CComponentParameter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CComponentParameter.cpp; path = Classes/CComponentParameter.cpp; sourceTree = "<group>"; };
 		5466C056175D829E009C3B84 /* CComponentParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CComponentParameter.h; path = Classes/CComponentParameter.h; sourceTree = "<group>"; };
-		549BA6C1175C267300DA4288 /* test.pm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; name = test.pm; path = Resources/test.pm; sourceTree = "<group>"; };
-		549BA6C3175C274900DA4288 /* TFPathManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFPathManager.cpp; path = Classes/TFPathManager.cpp; sourceTree = "<group>"; };
-		549BA6C4175C274900DA4288 /* TFPathManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFPathManager.h; path = Classes/TFPathManager.h; sourceTree = "<group>"; };
+		549BA6C3175C274900DA4288 /* CPathManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CPathManager.cpp; path = Classes/CPathManager.cpp; sourceTree = "<group>"; };
+		549BA6C4175C274900DA4288 /* CPathManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPathManager.h; path = Classes/CPathManager.h; sourceTree = "<group>"; };
 		54BD8ACF17084D1700F7663B /* ga_actors-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ga_actors-hd.plist"; path = "Resources/ga_actors-hd.plist"; sourceTree = "<group>"; };
 		54BD8AD017084D1700F7663B /* ga_actors-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ga_actors-hd.pvr.ccz"; path = "Resources/ga_actors-hd.pvr.ccz"; sourceTree = "<group>"; };
 		54BD8AD117084D1700F7663B /* ga_actors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ga_actors.plist; path = Resources/ga_actors.plist; sourceTree = "<group>"; };
@@ -717,6 +719,7 @@
 		54BD8ADC17084EDF00F7663B /* ga_scenes-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ga_scenes-hd.pvr.ccz"; path = "Resources/ga_scenes-hd.pvr.ccz"; sourceTree = "<group>"; };
 		54BD8ADD17084EDF00F7663B /* ga_scenes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ga_scenes.plist; path = Resources/ga_scenes.plist; sourceTree = "<group>"; };
 		54BD8ADE17084EDF00F7663B /* ga_scenes.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; name = ga_scenes.pvr.ccz; path = Resources/ga_scenes.pvr.ccz; sourceTree = "<group>"; };
+		54C7D97B1760278100C78F74 /* game_path.pmp */ = {isa = PBXFileReference; lastKnownFileType = file; name = game_path.pmp; path = Resources/game_path.pmp; sourceTree = "<group>"; };
 		54D5A5311708348600485E62 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = Classes/Common.h; sourceTree = "<group>"; };
 		54D5A5331708360900485E62 /* TFBattleFieldLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TFBattleFieldLayer.cpp; path = Classes/TFBattleFieldLayer.cpp; sourceTree = "<group>"; };
 		54D5A5341708360900485E62 /* TFBattleFieldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFBattleFieldLayer.h; path = Classes/TFBattleFieldLayer.h; sourceTree = "<group>"; };
@@ -822,7 +825,7 @@
 		542A33071709261600534A51 /* datas */ = {
 			isa = PBXGroup;
 			children = (
-				549BA6C1175C267300DA4288 /* test.pm */,
+				54C7D97B1760278100C78F74 /* game_path.pmp */,
 				54D5A83D1708435E00485E62 /* GameObject.plist */,
 				54569014172826BE00F66A63 /* GameCollision.plist */,
 			);
@@ -1724,6 +1727,8 @@
 				5466C054175D829E009C3B84 /* CComponent.h */,
 				5466C055175D829E009C3B84 /* CComponentParameter.cpp */,
 				5466C056175D829E009C3B84 /* CComponentParameter.h */,
+				5416198A175F74B9005091E5 /* CPathMoveComp.cpp */,
+				5416198B175F74B9005091E5 /* CPathMoveComp.h */,
 			);
 			name = Component;
 			sourceTree = "<group>";
@@ -1809,10 +1814,10 @@
 				54D5A55A1708372C00485E62 /* TFTexturesCache.h */,
 				71B83297170BE8D30035BA58 /* TFObjectFactory.cpp */,
 				71B83298170BE8D30035BA58 /* TFObjectFactory.h */,
-				549BA6C3175C274900DA4288 /* TFPathManager.cpp */,
-				549BA6C4175C274900DA4288 /* TFPathManager.h */,
-				5432D359175CB4960097FE6E /* TFPath.cpp */,
-				5432D35A175CB4960097FE6E /* TFPath.h */,
+				549BA6C3175C274900DA4288 /* CPathManager.cpp */,
+				549BA6C4175C274900DA4288 /* CPathManager.h */,
+				5432D359175CB4960097FE6E /* CPath.cpp */,
+				5432D35A175CB4960097FE6E /* CPath.h */,
 			);
 			name = DAC;
 			sourceTree = "<group>";
@@ -1911,8 +1916,8 @@
 				54543F6D170C4BB50067F471 /* bullet0.ccbi in Resources */,
 				5416ECE8170E8C8F004A5EF7 /* land.ccbi in Resources */,
 				54569015172826BE00F66A63 /* GameCollision.plist in Resources */,
-				549BA6C2175C267300DA4288 /* test.pm in Resources */,
 				5432D35D175CE5660097FE6E /* m1.ccbi in Resources */,
+				54C7D97C1760278100C78F74 /* game_path.pmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2125,10 +2130,11 @@
 				71B83299170BE8D30035BA58 /* TFObjectFactory.cpp in Sources */,
 				5416ECEB170E8D5C004A5EF7 /* EPLand.cpp in Sources */,
 				54EAAF7C17282ED200231A45 /* CCDictionarySaver.cpp in Sources */,
-				549BA6C5175C274900DA4288 /* TFPathManager.cpp in Sources */,
-				5432D35B175CB4960097FE6E /* TFPath.cpp in Sources */,
+				549BA6C5175C274900DA4288 /* CPathManager.cpp in Sources */,
+				5432D35B175CB4960097FE6E /* CPath.cpp in Sources */,
 				5466C057175D829E009C3B84 /* CComponent.cpp in Sources */,
 				5466C058175D829E009C3B84 /* CComponentParameter.cpp in Sources */,
+				5416198C175F74B9005091E5 /* CPathMoveComp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

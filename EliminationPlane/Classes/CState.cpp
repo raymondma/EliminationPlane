@@ -57,6 +57,11 @@ bool CState::changeState(const string& state, CComponentParameter* parameter, bo
 	currentState_ = state;
 	
 	onEnterState(currentState_);
+    
+    if (parameter)
+    {
+        setComponentParameter(parameter);
+    }
 	return true;
 }
 

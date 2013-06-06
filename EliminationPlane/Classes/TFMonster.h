@@ -13,7 +13,7 @@
 #include "TFCollisionProtocol.h"
 #include "TFHPBar.h"
 
-class TFPath;
+class CPath;
 
 class TFMonster : public CRole
 {
@@ -49,8 +49,6 @@ protected:
     float m_hitTime;
     float m_speed;
 private:
-    TFPath* path_;
-    int splineIdx_;
 };
 
 #endif /* defined(__TheForce__TFMonster__) */

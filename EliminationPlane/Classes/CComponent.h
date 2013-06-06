@@ -14,6 +14,15 @@
 
 USING_NS_CC;
 
+#define COMPONENT_CREATE_FUNC(__class__) \
+static __class__* create(CObjectBase* target)\
+{\
+    __class__* ret = new __class__;\
+    ret->setTarget(target);\
+    ret->autorelease();\
+    return ret;\
+}
+
 
 class CComponent : public CCObject
 {

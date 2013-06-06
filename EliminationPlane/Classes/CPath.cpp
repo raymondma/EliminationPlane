@@ -1,12 +1,13 @@
 //
-//  TFPath.cpp
+//  CPath.cpp
 //  EliminationPlane
 //
 //  Created by 马 俊 on 13-6-3.
 //
 //
 
-#include "TFPath.h"
+#include "CPath.h"
+#include <math.h>
 
 #define B_SPLINE(u, u_2, u_3, cntrl0, cntrl1, cntrl2, cntrl3) \
 ( \
@@ -31,7 +32,7 @@
 #define SPLINE  B_SPLINE
 
 
-TFPath::TFPath()
+CPath::CPath()
 : spline_(NULL)
 {
     
@@ -39,14 +40,54 @@ TFPath::TFPath()
 
 
 
-TFPath::~TFPath()
+CPath::~CPath()
 {
     CC_SAFE_RELEASE(spline_);
 }
 
 
 
-bool TFPath::init(CCArray* cp)
+bool CPath::initWithData(char* pData, int32_t length)
+{
+    do
+    {
+        char* p = pData;
+        pathName_.clear();
+        int32_t pathNameLen = *((int32_t*)p);
+        p += sizeof(int32_t);
+        
+        pathName_.resize(pathNameLen + 1);
+        memcpy(&(pathName_[0]), p, pathNameLen);
+        p += pathNameLen;
+        
+        int len = length - sizeof(int32_t) - pathNameLen;
+
+        CCArray* controlPoint = CCArray::create();
+        double x, y;
+
+        len /= 2 * sizeof(double);
+        for (int i = 0; i < len; ++i)
+        {
+            x = *((double*)p);
+            p += sizeof(double);
+            y = *((double*)p);
+            p += sizeof(double);
+            
+            CCPoint* pt = new CCPoint(x, y);
+            pt->autorelease();
+            controlPoint->addObject(pt);
+        }
+
+        CC_BREAK_IF(!makeSpline(controlPoint));
+        return true;
+    } while (false);
+    
+    return false;
+}
+
+
+
+bool CPath::makeSpline(CCArray* cp)
 {
     int division;
     int maxDivision = 0;
@@ -93,7 +134,7 @@ bool TFPath::init(CCArray* cp)
                             cps[2].y,
                             cps[3].y);
         
-        division = MAX(abs(startPoint.x-endPoint.x), abs(startPoint.y-endPoint.y));
+        division = MAX(fabs(startPoint.x-endPoint.x), fabs(startPoint.y-endPoint.y));
         if (division > maxDivision)
         {
             maxDivision = division;

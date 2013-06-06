@@ -14,17 +14,13 @@
 #include "TFItemInGameMgr.h"
 #include "TFBattleFieldDataMgr.h"
 
-#include "TFPathManager.h"
-#include "TFPath.h"
-
+#include "CPathMoveComp.h"
 
 DEFINE_DICTFUNC(TFMonster, float, MaxHP, 0);
 
 
 TFMonster::TFMonster() : m_pHPBar(NULL)
 ,m_speed(180)
-,path_(NULL)
-,splineIdx_(0)
 {
     
 }
@@ -99,6 +95,11 @@ bool TFMonster::init(CCDictionary* pObjectDict)
     m_maxHitPoint = getMaxHPFromDict();
     m_hitPoint = m_maxHitPoint;
     
+    this->addComponentForState("Ready", CPathMoveComp::create(this));
+    
+    CComponentParameter* param = CComponentParameter::create();
+    param->addStringParameter(PARAM_PATH_NAME, "p2");
+    changeState("Ready", param);
 //    if (!createHPBar())
 //    {
 //        return false;
@@ -107,7 +108,6 @@ bool TFMonster::init(CCDictionary* pObjectDict)
 //    m_pHPBar->setPercentage(1.f);
 //    m_pHPBar->setSpriteVisible(false);
 
-    path_ = PATH_MANAGER->getPath();
     return true;
 }
 
@@ -117,7 +117,6 @@ void TFMonster::update(float dt)
 {    
     CRole::update(dt);
 
-    static float time = 0;
     if (!isDead())
     {
 //        float offset = m_speed * dt;
@@ -130,24 +129,6 @@ void TFMonster::update(float dt)
 //        {
 //            die();
 //        }
-        const float INTV = 0.01f;
-        time += dt;
-        if (time >= INTV)
-        {
-            time -= INTV;
-            if (path_)
-            {
-                CCArray* spline = path_->getSpline();
-                CCPoint* pt = dynamic_cast<CCPoint*>(spline->objectAtIndex(splineIdx_));
-                setSpritePosition(*pt);
-                splineIdx_++;
-                
-                if (splineIdx_ >= spline->count())
-                {
-                    splineIdx_ = 0;
-                }
-            }
-        }
 
     }
     

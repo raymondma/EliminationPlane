@@ -1,5 +1,5 @@
 //
-//  TFPathManager.h
+//  CPathManager.h
 //  EliminationPlane
 //
 //  Created by 马 俊 on 13-6-3.
@@ -11,27 +11,28 @@
 
 #include "cocos2d.h"
 #include "TFSingleton.h"
+#include <string>
 
+using namespace std;
 USING_NS_CC;
 
-class TFPath;
+class CPath;
 
-
-class TFPathManager : public TFSingleton<TFPathManager>
+class CPathManager : public TFSingleton<CPathManager>
 {
-    CC_SYNTHESIZE_RETAIN(CCArray*, paths_, Paths);
+    CC_SYNTHESIZE_RETAIN(CCDictionary*, paths_, Paths);
 public:
-    TFPathManager();
-    virtual ~TFPathManager();
+    CPathManager();
+    virtual ~CPathManager();
     virtual bool initialize();
     
-    virtual TFPath* getPath();
+    virtual CPath* getPathByName(const string& name);
 protected:
 
 private:
 };
 
 
-#define PATH_MANAGER (TFPathManager::getInstance())
+#define PATH_MANAGER (CPathManager::getInstance())
 
 #endif /* defined(__EliminationPlane__TFPathManager__) */

@@ -14,7 +14,7 @@
 #include "TFBattleFieldLayer.h"
 #include "TFTexturesCache.h"
 #include "TFObjectFactory.h"
-#include "TFPathManager.h"
+#include "CPathManager.h"
 
 #include "CRole.h"
 

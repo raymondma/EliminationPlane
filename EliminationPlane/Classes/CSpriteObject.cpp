@@ -174,7 +174,18 @@ bool CSpriteObject::changeState(const string& s, CComponentParameter* parameter,
     {
         if (getCCBReader())
         {
-            getCCBReader()->getAnimationManager()->runAnimations(s.c_str());
+            CCBAnimationManager* am = getCCBReader()->getAnimationManager();
+            CCArray* seq = am->getSequences();
+            CCObject* pObj;
+            CCARRAY_FOREACH(seq, pObj)
+            {
+                CCBSequence *seq = (CCBSequence*)pObj;
+                if (s.compare(seq->getName()) == 0)
+                {
+                    am->runAnimations(seq->getSequenceId(), 0);
+                }
+            }
+//            getCCBReader()->getAnimationManager()->runAnimations(s.c_str());
         }
     }
     
